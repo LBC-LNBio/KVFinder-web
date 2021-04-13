@@ -26,8 +26,8 @@ The KVFinder-web application has two components: a PyMOL plugin client and a web
    :maxdepth: 1
    :caption: GitHub repositories
 
-   `PyMOL KVFinder-web Tools <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools>`_
-   `KVFinder-web service <https://github.com/LBC-LNBio/parKVFinder-webservice>`_
+   PyMOL KVFinder-web Tools <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools>
+   KVFinder-web service <https://github.com/LBC-LNBio/parKVFinder-webservice>
 
 .. toctree::
    :maxdepth: 1
