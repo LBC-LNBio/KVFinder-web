@@ -103,7 +103,7 @@ The local KVFinder-web service is available at: http://localhost:8081.
 
 The queue information can be accessed at: http://localhost:8023/info.
 
-To use the PyMOL KVFinder-web Tools, users must change the server url hardcoded on the `__init__.py <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py>` file.
+To use the PyMOL KVFinder-web Tools, users must change the server url hardcoded on the `__init__.py <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py>`_ file.
 
 From:
 
