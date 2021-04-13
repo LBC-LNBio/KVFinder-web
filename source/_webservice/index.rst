@@ -1,5 +1,5 @@
-KVFinder-web server
-===================
+KVFinder-web service
+====================
 
 KVFinder-web server has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container. 
 
@@ -22,7 +22,7 @@ Web-service configuration
     Limitations:
     - Cavity representation always filtered
     - Custom box cannot be much bigger than the 3D grid
-    - Grid spacing must be 0.6 a
+    - Grid spacing must be 0.6 A
     - Probe Out <= 50A
     - Probe In <= 5A
     - Removal distance <= 10A

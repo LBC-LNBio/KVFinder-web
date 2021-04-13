@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>KVFinder-web server &mdash; KVFinder-web 1.0.0 documentation</title>
+  <title>KVFinder-web service &mdash; KVFinder-web 1.0.0 documentation</title>
   
 
   
@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="../_repos/index.html" />
+    <link rel="next" title="Issues" href="../_about/index.html" />
     <link rel="prev" title="PyMOL KVFinder-web Tools" href="../_plugin/index.html" /> 
 </head>
 
@@ -96,12 +96,17 @@
 </ul>
 <p class="caption"><span class="caption-text">KVFinder-web service</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">KVFinder-web server</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">KVFinder-web service</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#web-service-configuration">Web-service configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#api-reference">API reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#local-configuration">Local configuration</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">GitHub repositories</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="`PyMOL KVFinder-web Tools &lt;https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools&gt;`_">`PyMOL KVFinder-web Tools &lt;https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools&gt;`_</a></li>
+<li class="toctree-l1"><a class="reference external" href="`KVFinder-web service &lt;https://github.com/LBC-LNBio/parKVFinder-webservice&gt;`_">`KVFinder-web service &lt;https://github.com/LBC-LNBio/parKVFinder-webservice&gt;`_</a></li>
 </ul>
 <p class="caption"><span class="caption-text">About</span></p>
 <ul>
@@ -157,7 +162,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>KVFinder-web server</li>
+      <li>KVFinder-web service</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,8 +181,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="kvfinder-web-server">
-<h1>KVFinder-web server<a class="headerlink" href="#kvfinder-web-server" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="kvfinder-web-service">
+<h1>KVFinder-web service<a class="headerlink" href="#kvfinder-web-service" title="Permalink to this headline">¶</a></h1>
 <p>KVFinder-web server has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container.</p>
 <p>The Web component receives jobs requests in JSON format with detection parameters. If the request is valid, it returns a response with a unique id, based on the provided parameters, corresponding to the accepted job to the client. Otherwise, it returns an HTTP error code with an error message. The client must send a request with an id and the Web component returns “queued”, “running” or “completed” together with the respective results.</p>
 <p>The Queue component uses Ocypod software that receives jobs accepted by the Web component.</p>
@@ -193,7 +198,7 @@
 <p>Limitations:
 - Cavity representation always filtered
 - Custom box cannot be much bigger than the 3D grid
-- Grid spacing must be 0.6 a
+- Grid spacing must be 0.6 A
 - Probe Out &lt;= 50A
 - Probe In &lt;= 5A
 - Removal distance &lt;= 10A</p>
@@ -289,7 +294,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../_repos/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../_about/index.html" class="btn btn-neutral float-right" title="Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="../_plugin/index.html" class="btn btn-neutral float-left" title="PyMOL KVFinder-web Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
