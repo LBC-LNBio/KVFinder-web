@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>KVFinder-web server &mdash; KVFinder-web 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/icon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../_repos/index.html" />
+    <link rel="prev" title="PyMOL KVFinder-web Tools" href="../_plugin/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> KVFinder-web
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_plugin/index.html">PyMOL KVFinder-web Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">KVFinder-web service</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">KVFinder-web server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#web-service-configuration">Web-service configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api-reference">API reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#local-configuration">Local configuration</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_about/index.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/index.html#scientific-team">Scientific team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/index.html#citing-kvfinder-web">Citing KVFinder-web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/index.html#license">License</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KVFinder-web</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>KVFinder-web server</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_webservice/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kvfinder-web-server">
+<h1>KVFinder-web server<a class="headerlink" href="#kvfinder-web-server" title="Permalink to this headline">¶</a></h1>
+<p>KVFinder-web server has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container.</p>
+<p>The Web component receives jobs requests in JSON format with detection parameters. If the request is valid, it returns a response with a unique id, based on the provided parameters, corresponding to the accepted job to the client. Otherwise, it returns an HTTP error code with an error message. The client must send a request with an id and the Web component returns “queued”, “running” or “completed” together with the respective results.</p>
+<p>The Queue component uses Ocypod software that receives jobs accepted by the Web component.</p>
+<p>The Worker component communicate with Queue component, requesting “queued” jobs, that will be processed with parKVFinder software. After completion, the job results are sent back to the Web component and made available to the client.</p>
+<div class="section" id="web-service-configuration">
+<h2>Web-service configuration<a class="headerlink" href="#web-service-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p>Describe configuration:
+- Job timeout: 30 minutes
+- Job expiration: 1 day
+- Maximum payload  (JSON input): 1 Mb</p>
+<p>Limitations:
+- Cavity representation always filtered
+- Custom box cannot be much bigger than the 3D grid
+- Grid spacing must be 0.6 a
+- Probe Out &lt;= 50A
+- Probe In &lt;= 5A
+- Removal distance &lt;= 10A</p>
+<p class="last">Describe JSONs:
+- Inputs
+- Outputs</p>
+</div>
+</div>
+<div class="section" id="api-reference">
+<h2>API reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Create a job:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Method: POST</li>
+<li>Media type: application/json</li>
+<li>URL: <a class="reference external" href="http://parkvfinder.cnpem.br:8081/create">http://parkvfinder.cnpem.br:8081/create</a></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Request a job:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Method: GET</li>
+<li>Media type: application/json</li>
+<li>URL: <a class="reference external" href="http://parkvfinder.cnpem.br:8081">http://parkvfinder.cnpem.br:8081</a>/{id}, where id is the job id sent to the user on job submission.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are using a local KVFinder-web service on your network, you must provide the IP Address instead of parkvfinder.cnpem.br.</p>
+</div>
+</div>
+<div class="section" id="local-configuration">
+<h2>Local configuration<a class="headerlink" href="#local-configuration" title="Permalink to this headline">¶</a></h2>
+<p>To execute the KVFinder-web service, the <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code> tool is required. To install it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install docker-compose
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Users can use their preferred package manager to install docker-compose tool.</p>
+</div>
+<p>In the first execution or after changes on the source code, the KVFinder-web service must be compiled:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose up --build
+</pre></div>
+</div>
+<p>To start the KVFinder-web service, use the command below at the root of KVFinder-websevice repository (where docker-compose.yml file is located).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose up
+</pre></div>
+</div>
+<p>To run the KVFinder-web service on background, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose up -d
+</pre></div>
+</div>
+<p>To interrupt an active KVFinder-web service instance, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose down
+</pre></div>
+</div>
+<p>To erase the volumes that store the Queue component data and the job folders and files, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose down --volumes
+</pre></div>
+</div>
+<p>To start more than one Worker module and thus make KVFinder-web service capable of running more than one job simultaneously. For instance, to start with two Worker modules:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose up --scale kv-worker<span class="o">=</span><span class="m">2</span>
+</pre></div>
+</div>
+<p>The local KVFinder-web service is available at: <a class="reference external" href="http://localhost:8081">http://localhost:8081</a>.</p>
+<p>The queue information can be accessed at: <a class="reference external" href="http://localhost:8023/info">http://localhost:8023/info</a>.</p>
+<p>To use the PyMOL KVFinder-web Tools, users must change the server url hardcoded on the <cite>__init__.py &lt;https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py&gt;</cite> file.</p>
+<p>From:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Server                                 #</span>
+<span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://parkvfinder.cnpem.br&quot;</span>   <span class="c1">#</span>
+</pre></div>
+</div>
+<p>to:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Server                                 #</span>
+<span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://localhost&quot;</span>              <span class="c1">#</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the KVFinder-web service is on another computer on your network, you must provide the IP Address instead of localhost.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../_repos/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../_plugin/index.html" class="btn btn-neutral float-left" title="PyMOL KVFinder-web Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Joao Victor da Silva Guerra.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

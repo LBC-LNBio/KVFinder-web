@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>&lt;no title&gt; &mdash; KVFinder-web 1.0.0 documentation</title>
+  <title>PyMOL KVFinder-web Tools &mdash; KVFinder-web 1.0.0 documentation</title>
   
 
   
@@ -41,8 +41,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Issues" href="../_about/index.html" />
-    <link rel="prev" title="KVFinder-web server" href="../_webservice/index.html" /> 
+    <link rel="next" title="KVFinder-web server" href="../_webservice/index.html" />
+    <link rel="prev" title="Welcome to KVFinder-web’s documentation!" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,8 +91,12 @@
             
             
               <p class="caption"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../_plugin/index.html">PyMOL KVFinder-web Tools</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PyMOL KVFinder-web Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tutorial">Tutorial</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">KVFinder-web service</span></p>
 <ul>
@@ -152,13 +156,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+      <li>PyMOL KVFinder-web Tools</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/_repos/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/_plugin/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -171,15 +175,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="pymol-kvfinder-web-tools">
+<h1>PyMOL KVFinder-web Tools<a class="headerlink" href="#pymol-kvfinder-web-tools" title="Permalink to this headline">¶</a></h1>
+<p>The installation procedure and tutorial of the PyMOL plugin client (PyMOL KVFinder-web Tools) are described below.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>PyMOL KVFinder-web Tools is a PyMOL v2 plugin for detecting and characterizing biomolecular cavities at a KVFinder-web service.</p>
+<p><a class="reference external" href="https://pymol.org/2/">PyMOL v2</a> is required if you wish to use PyMOL KVFinder-web Tools.</p>
+<p>Afterwards, install the required Python packages from [requirements.txt](<a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/master/requirements.txt">https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/master/requirements.txt</a>) file on PyMOL’s Python.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span>
+<span class="pre">`</span></code></p>
+<p>or directly,</p>
+<p><code class="docutils literal notranslate"><span class="pre">`bash</span>
+<span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pyqt5</span> <span class="pre">toml</span> <span class="pre">typing</span>
+<span class="pre">`</span></code></p>
+<p>Now, download the latest version of PyMOL KVFinder-web Tools from [here](<a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip">https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip</a>).</p>
+<ol class="arabic simple">
+<li>Open PyMOL;</li>
+<li>Go to <strong>Plugin</strong> menu and select <strong>Plugin Manager</strong> option;</li>
+<li>The <strong>Plugin Manager</strong> window will open, go to the <strong>Install New Plugin</strong> tab;</li>
+<li>Under <strong>Install from local file</strong> group, click on <strong>Choose file…</strong>;</li>
+<li>The <strong>Install Plugin</strong> window will open, select the <cite>PyMOL-KVFinder-web-Tools.zip</cite>;</li>
+<li>The <strong>Select plugin directory</strong> window will open, select <cite>/home/user/.pymol/startup</cite> and click <strong>OK</strong>;</li>
+<li>The <strong>Confirm</strong> window will open, click on <strong>OK</strong>;</li>
+<li>The <strong>Sucess</strong> window will open, confirming that the plugin has been installed;</li>
+<li>Restart PyMOL;</li>
+<li><strong>PyMOL KVFinder-web Tools</strong> is ready to use under <strong>Plugin</strong> menu.</li>
+</ol>
+<p>Or, if you clone this [repository](<a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools</a>), instead of selecting <cite>PyMOL-KVFinder-web-Tools.zip</cite> (Step 5), user must select <cite>__init__.py</cite> of PyMOL-KVFinder-web-Tools-CNPEM directory.</p>
+</div>
+<div class="section" id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
 
            </div>
            
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../_about/index.html" class="btn btn-neutral float-right" title="Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../_webservice/index.html" class="btn btn-neutral float-left" title="KVFinder-web server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../_webservice/index.html" class="btn btn-neutral float-right" title="KVFinder-web server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to KVFinder-web’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
