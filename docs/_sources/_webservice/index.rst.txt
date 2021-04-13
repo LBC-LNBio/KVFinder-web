@@ -1,5 +1,5 @@
-KVFinder-web service
-====================
+Overview
+========
 
 KVFinder-web server has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container. 
 
@@ -10,7 +10,7 @@ The Queue component uses Ocypod software that receives jobs accepted by the Web 
 The Worker component communicate with Queue component, requesting "queued" jobs, that will be processed with parKVFinder software. After completion, the job results are sent back to the Web component and made available to the client.
 
 Web-service configuration
--------------------------
+=========================
 
 .. todo::
     
@@ -32,7 +32,7 @@ Web-service configuration
     - Outputs
 
 API reference
--------------
+=============
 
 - Create a job: 
     
@@ -51,7 +51,7 @@ API reference
     If you are using a local KVFinder-web service on your network, you must provide the IP Address instead of parkvfinder.cnpem.br.
 
 Local configuration
--------------------
+===================
 
 To execute the KVFinder-web service, the ``docker-compose`` tool is required. To install it:
 

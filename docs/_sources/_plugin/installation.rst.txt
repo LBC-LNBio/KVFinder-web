@@ -1,10 +1,5 @@
-PyMOL KVFinder-web Tools
-========================
-
-The installation procedure and tutorial of the PyMOL plugin client (PyMOL KVFinder-web Tools) are described below.
-
 Installation
-------------
+============
 
 PyMOL KVFinder-web Tools is a PyMOL v2 plugin for detecting and characterizing biomolecular cavities at a KVFinder-web service.
 
@@ -36,6 +31,3 @@ Now, download the latest version of PyMOL KVFinder-web Tools from [here](https:/
 10. **PyMOL KVFinder-web Tools** is ready to use under **Plugin** menu.
 
 Or, if you clone this [repository](https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools), instead of selecting `PyMOL-KVFinder-web-Tools.zip` (Step 5), user must select `__init__.py` of PyMOL-KVFinder-web-Tools-CNPEM directory.
-
-Tutorial
---------

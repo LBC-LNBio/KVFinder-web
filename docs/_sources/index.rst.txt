@@ -14,7 +14,8 @@ The KVFinder-web application has two components: a PyMOL plugin client and a web
    :maxdepth: 1
    :caption: PyMOL KVFinder-web Tools
 
-   _plugin/index
+   _plugin/installation
+   _plugin/tutorial
 
 .. toctree::
    :maxdepth: 1
@@ -33,4 +34,7 @@ The KVFinder-web application has two components: a PyMOL plugin client and a web
    :maxdepth: 1
    :caption: About
 
-   _about/index
+   _about/issues
+   _about/scientific_team
+   _about/citing
+   _about/license

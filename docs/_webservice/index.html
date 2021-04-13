@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>KVFinder-web service &mdash; KVFinder-web 1.0.0 documentation</title>
+  <title>Overview &mdash; KVFinder-web 1.0.0 documentation</title>
   
 
   
@@ -41,8 +41,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Issues" href="../_about/index.html" />
-    <link rel="prev" title="PyMOL KVFinder-web Tools" href="../_plugin/index.html" /> 
+    <link rel="next" title="Issues" href="../_about/issues.html" />
+    <link rel="prev" title="Tutorial" href="../_plugin/tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -92,16 +92,15 @@
             
               <p class="caption"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../_plugin/index.html">PyMOL KVFinder-web Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_plugin/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_plugin/tutorial.html">Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">KVFinder-web service</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">KVFinder-web service</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#web-service-configuration">Web-service configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api-reference">API reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#local-configuration">Local configuration</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#web-service-configuration">Web-service configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#api-reference">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#local-configuration">Local configuration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">GitHub repositories</span></p>
 <ul>
@@ -110,10 +109,10 @@
 </ul>
 <p class="caption"><span class="caption-text">About</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../_about/index.html">Issues</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_about/index.html#scientific-team">Scientific team</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_about/index.html#citing-kvfinder-web">Citing KVFinder-web</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_about/index.html#license">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/scientific_team.html">Scientific team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/citing.html">Citing KVFinder-web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/license.html">License</a></li>
 </ul>
 
             
@@ -162,7 +161,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>KVFinder-web service</li>
+      <li>Overview</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -181,14 +180,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="kvfinder-web-service">
-<h1>KVFinder-web service<a class="headerlink" href="#kvfinder-web-service" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 <p>KVFinder-web server has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container.</p>
 <p>The Web component receives jobs requests in JSON format with detection parameters. If the request is valid, it returns a response with a unique id, based on the provided parameters, corresponding to the accepted job to the client. Otherwise, it returns an HTTP error code with an error message. The client must send a request with an id and the Web component returns “queued”, “running” or “completed” together with the respective results.</p>
 <p>The Queue component uses Ocypod software that receives jobs accepted by the Web component.</p>
 <p>The Worker component communicate with Queue component, requesting “queued” jobs, that will be processed with parKVFinder software. After completion, the job results are sent back to the Web component and made available to the client.</p>
+</div>
 <div class="section" id="web-service-configuration">
-<h2>Web-service configuration<a class="headerlink" href="#web-service-configuration" title="Permalink to this headline">¶</a></h2>
+<h1>Web-service configuration<a class="headerlink" href="#web-service-configuration" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
 <p>Describe configuration:
@@ -208,7 +208,7 @@
 </div>
 </div>
 <div class="section" id="api-reference">
-<h2>API reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
+<h1>API reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
 <ul>
 <li><p class="first">Create a job:</p>
 <blockquote>
@@ -235,7 +235,7 @@
 </div>
 </div>
 <div class="section" id="local-configuration">
-<h2>Local configuration<a class="headerlink" href="#local-configuration" title="Permalink to this headline">¶</a></h2>
+<h1>Local configuration<a class="headerlink" href="#local-configuration" title="Permalink to this headline">¶</a></h1>
 <p>To execute the KVFinder-web service, the <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code> tool is required. To install it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install docker-compose
 </pre></div>
@@ -286,7 +286,6 @@
 <p class="last">If the KVFinder-web service is on another computer on your network, you must provide the IP Address instead of localhost.</p>
 </div>
 </div>
-</div>
 
 
            </div>
@@ -294,8 +293,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../_about/index.html" class="btn btn-neutral float-right" title="Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../_plugin/index.html" class="btn btn-neutral float-left" title="PyMOL KVFinder-web Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../_about/issues.html" class="btn btn-neutral float-right" title="Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../_plugin/tutorial.html" class="btn btn-neutral float-left" title="Tutorial" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
