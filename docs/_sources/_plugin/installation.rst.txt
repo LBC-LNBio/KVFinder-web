@@ -30,4 +30,4 @@ Now, download the latest version of PyMOL KVFinder-web Tools from [here](https:/
 9. Restart PyMOL;
 10. **PyMOL KVFinder-web Tools** is ready to use under **Plugin** menu.
 
-Or, if you clone this [repository](https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools), instead of selecting `PyMOL-KVFinder-web-Tools.zip` (Step 5), user must select `__init__.py` of PyMOL-KVFinder-web-Tools-CNPEM directory.
+Or, if you clone this [repository](https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools), instead of selecting `PyMOL-KVFinder-web-Tools.zip` (Step 5), user must select `__init__.py` of PyMOL-KVFinder-web-Tools directory.

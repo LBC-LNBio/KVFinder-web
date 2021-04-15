@@ -1,7 +1,7 @@
 Scientific team
 ===============
 
-KVFinder-web was developed by:
+KVFinder-web service and PyMOL KVFinder-web Tools were developed by:
 
 - João Victor da Silva Guerra
 - José Geraldo de Carvalho Pereira

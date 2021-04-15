@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="_plugin/installation.html" /> 
+    <link rel="next" title="Overview" href="_webservice/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,17 +89,17 @@
               
             
             
-              <p class="caption"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
+              <p class="caption"><span class="caption-text">KVFinder-web service</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#web-service-configuration">Web service configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#api-reference">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#local-configuration">Local configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_plugin/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_plugin/tutorial.html">Tutorial</a></li>
-</ul>
-<p class="caption"><span class="caption-text">KVFinder-web service</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#web-service-configuration">Web-service configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#api-reference">API reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#local-configuration">Local configuration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">GitHub repositories</span></p>
 <ul>
@@ -185,21 +185,22 @@
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>KVFinder-web is an open-source web-based application for cavity detection and spatial characterization with <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder">parKVFinder</a> software of any type of biomolecular structure.</p>
-<p>The KVFinder-web application has two components: a PyMOL plugin client and a web service. The client (PyMOL KVFinder-web Tools) sends job requests to the web service, customize parKVFinder detection parameters and visualize job results on PyMOL. The KVFinder-web service handles requests from the clients, manages accepted jobs and performs cavity detection and characterization on accepted jobs.</p>
+<p>The KVFinder-web application has two components: a RESTful web service and a PyMOL plugin client. The RESTful web service (KVFinder-web service) handles requests from the clients, manages accepted jobs and performs cavity detection and characterization on accepted jobs. The client (PyMOL KVFinder-web Tools) sends job requests to the web service, customize parKVFinder detection parameters and visualize job results on PyMOL.</p>
+<p>Users may opt to run jobs on a locally configured server or on our publicly available KVFinder-web service, available at <a class="reference external" href="https://parkvfinder.cnpem.br">https://parkvfinder.cnpem.br</a>.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">KVFinder-web service</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#web-service-configuration">Web service configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#api-reference">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#local-configuration">Local configuration</a></li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_plugin/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_plugin/tutorial.html">Tutorial</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">KVFinder-web service</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#web-service-configuration">Web-service configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#api-reference">API reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_webservice/index.html#local-configuration">Local configuration</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -227,7 +228,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="_plugin/installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="_webservice/index.html" class="btn btn-neutral float-right" title="Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
