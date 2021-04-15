@@ -67,7 +67,7 @@ In the first execution or after changes on the source code, the KVFinder-web ser
 
 .. code-block:: bash
 
-    docker-compose up --build
+    docker-compose build
 
 To start the KVFinder-web service, use the command below at the root of KVFinder-websevice repository (where docker-compose.yml file is located).
 
