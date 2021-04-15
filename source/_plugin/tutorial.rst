@@ -207,7 +207,7 @@ In this scenario, when you submit the job, the **Job Submission** window will di
 For instance, resubmit your last job.
 
 .. image:: img/job_submission_2.png
-    :width: 800
+    :width: 300
 
 .. image:: img/pymol_viewer_10.png
     :width: 800
