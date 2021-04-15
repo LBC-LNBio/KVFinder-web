@@ -100,12 +100,29 @@
 <p class="caption"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#whole-protein-detection">Whole protein detection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#changing-cavity-boundary">Changing cavity boundary</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adjusting-probe-out">Adjusting Probe Out</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adjusting-removal-distance">Adjusting Removal Distance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#steered-detection">Steered detection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#box-adjustment-mode">Box adjustment mode</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ligand-adjustment-mode">Ligand adjustment mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-an-already-sent-job">Submitting an already sent job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#retrieving-a-job-by-its-id">Retrieving a Job by its ID</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">GitHub repositories</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">PyMOL KVFinder-web Tools</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder-webservice">KVFinder-web service</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service">KVFinder-web service</a></li>
 </ul>
 <p class="caption"><span class="caption-text">About</span></p>
 <ul>
@@ -182,6 +199,139 @@
             
   <div class="section" id="tutorial">
 <h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p>On this tutorial, we are going to demonstrate how to use PyMOL KVFinder-web Tools with our publicly available KVFinder-web service.</p>
+<p>All files used on this tutorial can be found under examples directory, on the PyMOL KVFinder-web Tools <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">repository</a>.</p>
+<div class="section" id="whole-protein-detection">
+<h2>Whole protein detection<a class="headerlink" href="#whole-protein-detection" title="Permalink to this headline">¶</a></h2>
+<p>First, load examples/1FMO.pdb into PyMOL. The <strong>1FMO</strong> is the catalytic subunit of a cAMP-dependent protein kinase (cAPK).</p>
+<p>After, open <strong>PyMOL KVFinder-web Tools</strong> under <strong>Plugin</strong> tab. The objects on the scene will be listed on the <strong>Input PDB</strong> box, on the <strong>Main</strong> tab. If not, click on the <strong>Refresh</strong> button.</p>
+<p>The <strong>Input PDB</strong> selection sets which object will be analyzed by KVFinder-web service. Then, select 1FMO.</p>
+<a class="reference internal image-reference" href="../_images/main_tab_1.png"><img alt="../_images/main_tab_1.png" src="../_images/main_tab_1.png" style="width: 800px;" /></a>
+<p>The default parameters are designed to make a simple and fast whole
+protein detection. To create a job with the default parameters, just click on <strong>Run KVFinder-web</strong> button.</p>
+<a class="reference internal image-reference" href="../_images/main_tab_2.png"><img alt="../_images/main_tab_2.png" src="../_images/main_tab_2.png" style="width: 800px;" /></a>
+<p>After successfully submitting the job to KVFinder-web service, a window will appear with the Job ID. For instace, the Job ID of our submission is 18100368098668549413.</p>
+<a class="reference internal image-reference" href="../_images/job_submission_1.png"><img alt="../_images/job_submission_1.png" src="../_images/job_submission_1.png" style="width: 300px;" /></a>
+<p>The job informations are stored on ~/.KVFinder-web directory in TOML-formatted files and can be visualized on <strong>Results</strong> tab under <strong>Jobs</strong> tab. The status of our submission (18100368098668549413) is displayed on the <strong>Status</strong> field.</p>
+<a class="reference internal image-reference" href="../_images/jobs_tab_1.png"><img alt="../_images/jobs_tab_1.png" src="../_images/jobs_tab_1.png" style="width: 800px;" /></a>
+<p>After completion, the <strong>Status</strong> field will change to <strong>Completed</strong> and the <strong>Show</strong> button will be enabled. Then, click on <strong>Show</strong> button load cavities into PyMOL viewer and the results on the <strong>Visualization</strong> tab. In addition, the focus will be automatically shifted to the <strong>Visualization</strong> tab.</p>
+<a class="reference internal image-reference" href="../_images/results_tab_1.png"><img alt="../_images/results_tab_1.png" src="../_images/results_tab_1.png" style="width: 800px;" /></a>
+<p>We can select cavities in the <strong>Volume</strong> or <strong>Surface Area</strong> lists to highlight them on a new object called <strong>cavities</strong>, identifying each cavity. Additionally, we can select cavity tags in the <strong>Interface Residues</strong> list to highlight residues around the cavities on a new object named <strong>residues</strong>.</p>
+<a class="reference internal image-reference" href="../_images/results_tab_2.png"><img alt="../_images/results_tab_2.png" src="../_images/results_tab_2.png" style="width: 800px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The interface residues surrounding the cavity KAF are colored in green (sticks), the surface points are colored in red (nb_spheres) and the remaining cavity points are colored in blue (non_bounded).</p>
+</div>
+<div class="section" id="changing-cavity-boundary">
+<h3>Changing cavity boundary<a class="headerlink" href="#changing-cavity-boundary" title="Permalink to this headline">¶</a></h3>
+<p>KVFinder-web service is all about parameters customization of parKVFinder software. One of parKVFinder’s most powerful assets is the ability to manually set the cavity boundary.</p>
+<p>parKVFinder works with a double probe system to detect cavities. A smaller probe, called Probe In, and a bigger one, called Probe Out, that defined two molecular surfaces with different accessibility. The space left between these surfaces is considered cavities.</p>
+<p>Let’s show the effect of varying <strong>Probe Out</strong> and <strong>Removal Distance</strong> on the cavity boundary.</p>
+<p>First, we should copy the cavity KAF to a new object to compare cavity boundary from the previous execution.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy KAF</span>
+<span class="k">select</span> resn KAF and output.KVFinder.output
+create KAF, sele
+delete sele
+<span class="c1"># Color KAF</span>
+color magenta, KAF
+</pre></div>
+</div>
+<div class="section" id="adjusting-probe-out">
+<h4>Adjusting Probe Out<a class="headerlink" href="#adjusting-probe-out" title="Permalink to this headline">¶</a></h4>
+<p>As mentioned above, adjusting the Probe Out size changes the level of the cavity boundary. So let’s go back on the <strong>Main</strong> tab and change the <strong>Probe Out</strong> size to 8.0 Å. Submit the job to KVFinder-web service again.</p>
+<p>After completion, load the job results by clicking on <strong>Show</strong> button on <strong>Results</strong> tab under <strong>Jobs</strong> tab.</p>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_1.png"><img alt="../_images/pymol_viewer_1.png" src="../_images/pymol_viewer_1.png" style="width: 800px;" /></a>
+<p>Again, copy the cavity KAF to a new object (KAF_PO).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy KAF</span>
+<span class="k">select</span> resn KAF and output.KVFinder.output
+create KAF_PO, sele
+delete sele
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_2.png"><img alt="../_images/pymol_viewer_2.png" src="../_images/pymol_viewer_2.png" style="width: 800px;" /></a>
+<p>The cavity KAF detected with the 4 Å Probe Out (magenta) has a lower boundary than that detected with the 8 Å probe (white). Therefore, by increasing the size of the Probe Out, the cavity boundary is also raised.</p>
+</div>
+<div class="section" id="adjusting-removal-distance">
+<h4>Adjusting Removal Distance<a class="headerlink" href="#adjusting-removal-distance" title="Permalink to this headline">¶</a></h4>
+<p>Besides adjusting the Probe Out size, we can also adjust the Removal Distance to change the cavity boundary. So let’s go back to the <strong>Main</strong> tab and change the <strong>Removal Distance</strong> to 1.2 Å and the size of Probe Out back to 4.0 Å. Submit the job to KVFinder-web service again.</p>
+<p>After completion, load the job results by clicking on <strong>Show</strong> button on <strong>Results</strong> tab under <strong>Jobs</strong> tab.</p>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_3.png"><img alt="../_images/pymol_viewer_3.png" src="../_images/pymol_viewer_3.png" style="width: 800px;" /></a>
+<p>Again, copy the cavity KAH (same region of the previous detections) to a new object (KAF_RD).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy KAH</span>
+<span class="k">select</span> resn KAH and output.KVFinder.output
+create KAH_RD, sele
+delete sele
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_4.png"><img alt="../_images/pymol_viewer_4.png" src="../_images/pymol_viewer_4.png" style="width: 800px;" /></a>
+<p>The cavity KAF detected with the 2.4 Å Removal Distance (magenta) has a lower boundary than that detected with the 1.2 Å (KAH; white). Therefore, by decreasing the Removal Distance, the cavity boundary is also raised.</p>
+<p>Furthermore, changing the cavity boundary by varying Probe Out and Removal Distance also affects cavity segregation.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Usually the Removal Distance adjustment is less time consuming than the Probe Out adjustment for similar effects.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="steered-detection">
+<h2>Steered detection<a class="headerlink" href="#steered-detection" title="Permalink to this headline">¶</a></h2>
+<p>An important feature of parKVFinder is the steered detection of cavities. We continue our tutorial illustrating two distinct methods of cavity segmentation.</p>
+<p>First, load examples/ligs_1FMO.pdb into PyMOL viewer. The <strong>ligs_1FMO</strong> is an adenosine (ADN) and a peptide kinase inhibitor (PKI).</p>
+<div class="section" id="box-adjustment-mode">
+<h3>Box adjustment mode<a class="headerlink" href="#box-adjustment-mode" title="Permalink to this headline">¶</a></h3>
+<p>Box adjustment mode explores closed regions with a custom box, which can be drawn via the GUI.</p>
+<p>On the <strong>Search Space</strong> tab, select <strong>Box Adjustment</strong> check box. This will enable a <strong>Box Adjustment</strong> frame, which handles the custom box in PyMOL viewer</p>
+<p>Then, select the adenosine ligand on ligs_1FMO object. This can be made on the PyMOL viewer by clicking on the ligand structure or using <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">resn</span> <span class="pre">ADN</span></code> PyMOL command.</p>
+<p>Click on <strong>Draw Box</strong> Button. This will create a custom box that limits the search space. It is fully customizable, but we will not change it for now.</p>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_5.png"><img alt="../_images/pymol_viewer_5.png" src="../_images/pymol_viewer_5.png" style="width: 800px;" /></a>
+<p>On the <strong>Main</strong> tab, change <strong>Removal Distance</strong> back to 2.4 Å and submit the job to KVFinder-web service.</p>
+<p>After completion, load the job results by clicking on <strong>Show</strong> button on <strong>Results</strong> tab under <strong>Jobs</strong> tab.</p>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_6.png"><img alt="../_images/pymol_viewer_6.png" src="../_images/pymol_viewer_6.png" style="width: 800px;" /></a>
+<p>Now, let’s customize the box parameters to segment the binding site of our target protein.</p>
+<p>Each axis is associated with one color (red with X, green with Y and blue with Z). The adjustment is made by the arrows or directly setting the value in the entry on the <strong>Search Space</strong> tab in the <strong>Box Adjustment</strong> group. We can also adjust the box angles by the same procedure. After altering the values, just click on <a href="#id1"><span class="problematic" id="id2">**</span></a>Redraw ** button to redraw the box object using the new values.</p>
+<p>Then, on the <strong>Search Space</strong> tab, reduce <strong>Maximum X</strong> to 1.0 Å and click <strong>Redraw Box</strong>. Submit the job to KVFinder-web service.</p>
+<p>After completion, load the job results by clicking on <strong>Show</strong> button on <strong>Results</strong> tab under <strong>Jobs</strong> tab.</p>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_7.png"><img alt="../_images/pymol_viewer_7.png" src="../_images/pymol_viewer_7.png" style="width: 800px;" /></a>
+<p>Lastly, click on <strong>Delete Box</strong> button to delete the custom box.</p>
+</div>
+</div>
+<div class="section" id="ligand-adjustment-mode">
+<h2>Ligand adjustment mode<a class="headerlink" href="#ligand-adjustment-mode" title="Permalink to this headline">¶</a></h2>
+<p>A last feature is to limit the search around a structure. In this last example, let’s do a whole protein prospection again, but limiting the search space around ligands.</p>
+<p>First, on the <strong>Search Space</strong> tab, deselect <strong>Box Adjustment</strong> check box, which will disable the previous enabled <strong>Box Adjustment</strong> frame.</p>
+<p>Still on the <strong>Search Space</strong> tab, click on the check button <strong>Ligand Adjustment</strong>, which will enable the <strong>Refresh</strong> button, the <strong>Ligand PDB</strong> combo box and the <strong>Ligand Cutoff</strong> entry.</p>
+<p>Afterwards, copy the adenosine (ADN) from ligs_1FMO to a new object.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy adenosine</span>
+<span class="k">select</span> resn ADN
+create adenosine, sele
+delete sele
+</pre></div>
+</div>
+<p>Click the <strong>Refresh</strong> button to display all objects in the scene in the Ligand PDB combo box. Select the <strong>ADN</strong> on the combo box and reduce Ligand Cutoff to 3.0 Å. Submit the job to KVFinder-web service.</p>
+<p>After completion, load the job results by clicking on <strong>Show</strong> button on <strong>Results</strong> tab under <strong>Jobs</strong> tab.</p>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_8.png"><img alt="../_images/pymol_viewer_8.png" src="../_images/pymol_viewer_8.png" style="width: 800px;" /></a>
+<p>Now, let’s shift focus to the two ligands (ADN and PKI) in the ligs_1FMO object.</p>
+<p>On the <strong>Search Space</strong> tab, select the <strong>ligs_1FMO</strong> on the <strong>Ligand PDB</strong> combo box and increase <strong>Ligand Cutoff</strong> back to 5.0 Å. Back on the <strong>Main</strong> tab, increase <strong>Probe Out</strong> to 10.0 Å and reduce <strong>Removal Distance</strong> to 0.0 Å. Submit the job to KVFinder-web service.</p>
+<p>After completion, load the job results by clicking on <strong>Show</strong> button on <strong>Results</strong> tab under <strong>Jobs</strong> tab.</p>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_9.png"><img alt="../_images/pymol_viewer_9.png" src="../_images/pymol_viewer_9.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="submitting-an-already-sent-job">
+<h2>Submitting an already sent job<a class="headerlink" href="#submitting-an-already-sent-job" title="Permalink to this headline">¶</a></h2>
+<p>Users may submit a job that have already been submitted to the KVFinder-web service and the job is still available on the web service.</p>
+<p>In this scenario, when you submit the job, the <strong>Job Submission</strong> window will display the job status. If the job is completed, the GUI automatically loads the job into the GUI and PyMOL viewer.</p>
+<p>For instance, resubmit your last job.</p>
+<a class="reference internal image-reference" href="../_images/job_submission_2.png"><img alt="../_images/job_submission_2.png" src="../_images/job_submission_2.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/pymol_viewer_10.png"><img alt="../_images/pymol_viewer_10.png" src="../_images/pymol_viewer_10.png" style="width: 800px;" /></a>
+</div>
+<div class="section" id="retrieving-a-job-by-its-id">
+<h2>Retrieving a Job by its ID<a class="headerlink" href="#retrieving-a-job-by-its-id" title="Permalink to this headline">¶</a></h2>
+<p>Users may share their jobs with colleagues by the <strong>Job ID</strong> that they receive when submitting a job.</p>
+<p>On the <strong>Results</strong> tab, under <strong>Jobs</strong> tab, click on the <strong>Add ID</strong> button. A new window (Job ID Form) will appear.</p>
+<a class="reference internal image-reference" href="../_images/job_id_form_1.png"><img alt="../_images/job_id_form_1.png" src="../_images/job_id_form_1.png" style="width: 800px;" /></a>
+<p>In this window, fill the fields and click on <strong>Add</strong> button.</p>
+<p>If the job was not available on the KVFinder-web service or does not exist. A window will apper stating that the <em>Job ID (XXXXX) was not found in KVFinder-web server!</em>.</p>
+<p>Otherwise, a window will apper stating that the <em>Job successfully added!</em> together with the job status. Additionally, this Job ID will appear on the <strong>Available Jobs</strong> combo box.</p>
+</div>
 </div>
 
 

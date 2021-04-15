@@ -3,12 +3,12 @@ Issues
 
 KVFinder-web project uses of GitHub for project management. Please help us by reporting any problems or requests.
 
-For our KVFinder-web service, you can file a `Issue <https://github.com/LBC-LNBio/parKVFinder-webservice/issues>`_, as:
+For our KVFinder-web service, you can file a `Issue <https://github.com/LBC-LNBio/KVFinder-web-service/issues>`_, as:
   
-    * `Bug Report <https://github.com/LBC-LNBio/parKVFinder-webservice/issues/new?assignees=&labels=&template=bug_report.md&title=>`_
-    * `Request for a new feature <https://github.com/LBC-LNBio/parKVFinder-webservice/issues/new?assignees=&labels=&template=feature_request.md&title=>`_
+    * `Bug Report <https://github.com/LBC-LNBio/KVFinder-web-service/issues/new?assignees=&labels=&template=bug_report.md&title=>`_
+    * `Request for a new feature <https://github.com/LBC-LNBio/KVFinder-web-service/issues/new?assignees=&labels=&template=feature_request.md&title=>`_
 
-For our PyMOL plugin client, you can file a `Issue <https://github.com/LBC-LNBio/parKVFinder-webservice/issues>`_, as:
+For our PyMOL plugin client, you can file a `Issue <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/issues>`_, as:
   
     * `Bug Report <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/issues/new?assignees=&labels=&template=bug_report.md&title=>`_
     * `Request for a new feature <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/issues/new?assignees=&labels=&template=feature_request.md&title=>`_
