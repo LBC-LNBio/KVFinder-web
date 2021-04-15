@@ -18,7 +18,7 @@ The **Input PDB** selection sets which object will be analyzed by KVFinder-web s
     :width: 800
 
 The default parameters are designed to make a simple and fast whole
-protein detection. To create a job with the default parameters, just click on **Run KVFinder-web** button.
+protein detection. To submit a job with the default parameters to KVFinder-web service, just click on **Run KVFinder-web** button.
 
 .. image:: img/main_tab_2.png
     :width: 800
