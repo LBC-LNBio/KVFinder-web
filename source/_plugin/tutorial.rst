@@ -164,7 +164,7 @@ After completion, load the job results by clicking on **Show** button on **Resul
 Lastly, click on **Delete Box** button to delete the custom box.
 
 Ligand adjustment mode
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^
 
 A last feature is to limit the search around a structure. In this last example, let's do a whole protein prospection again, but limiting the search space around ligands.
 
