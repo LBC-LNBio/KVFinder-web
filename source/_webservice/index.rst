@@ -1,7 +1,7 @@
 Overview
 ========
 
-KVFinder-web service is a RESTful web service that runs [parKVFinder](https://github.com/LBC-LNBio/parKVFinder) software to detect and chacterize cavities. The web service has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container, making available to execute on different platforms and Cloud services. 
+KVFinder-web service is a RESTful web service that runs `parKVFinder <https://github.com/LBC-LNBio/parKVFinder`_ software to detect and chacterize cavities. The web service has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container, making available to execute on different platforms and Cloud services. 
 
 The web server module receives jobs requests in JSON. If the request is valid, it returns a response with a unique id. This id is create by the web server that applies a hash function into the received data, which include detection parameters and the molecular structures. Otherwise, it returns an HTTP error code with an error message. The client must send a request with an id and the web server module returns "queued", "running" or "completed" together with the respective results. 
 
@@ -136,7 +136,7 @@ Example of job request:
             "MODEL        1\n",
             "ATOM      1  N   GLU E  13      -6.693 -15.642 -14.858  1.00100.00           N  \n",
             (...)
-        "END\n"
+            "END\n"
         ],
         "settings": {
             "modes": {
