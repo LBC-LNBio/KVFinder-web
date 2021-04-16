@@ -1,7 +1,7 @@
 Overview
 ========
 
-KVFinder-web service is a RESTful web service that runs `parKVFinder <https://github.com/LBC-LNBio/parKVFinder`_ software to detect and chacterize cavities. The web service has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container, making available to execute on different platforms and Cloud services. 
+KVFinder-web service is a RESTful web service that runs `parKVFinder <https://github.com/LBC-LNBio/parKVFinder>`_ software to detect and chacterize cavities. The web service has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container, making available to execute on different platforms and Cloud services. 
 
 The web server module receives jobs requests in JSON. If the request is valid, it returns a response with a unique id. This id is create by the web server that applies a hash function into the received data, which include detection parameters and the molecular structures. Otherwise, it returns an HTTP error code with an error message. The client must send a request with an id and the web server module returns "queued", "running" or "completed" together with the respective results. 
 
@@ -12,24 +12,19 @@ The worker module communicate with queue module, requesting "queued" jobs, that 
 Web service configuration
 =========================
 
-.. todo::
-    
-    Describe configuration:
-        - Job timeout: 30 minutes
-        - Job expiration: 1 day
-        - Maximum payload  (JSON input): 1 Mb
+The web service has a Job timeout of 30 minutes (maximum time that a accepted job could run on the KVFinder-web service), completed jobs will be available on the web service up to **1 day** after completion, and the maximum payload (maximum size of the JSON) of the data sent to the KVFinder-web service is 1 Mb.
 
-    Limitations:
-        - Cavity representation always filtered
-        - Custom box cannot be much bigger than the 3D grid
-        - Grid spacing must be 0.6 A
-        - Probe Out <= 50A
-        - Probe In <= 5A
-        - Removal distance <= 10A
+Further, the KVFinder-web service has some limitations, compared to a local installation of parKVFinder, that are:
 
-    Describe JSONs:
-        - Inputs
-        - Outputs
+    - Cavity representation will be always filtered (cavity files will consume less space on the web service);
+    - The custom box cannot be much bigger than the 3D grid in order to avoid unnecessary calculation;
+    - The grid spacing must be 0.6 A to avoid unnecessary time-consuming jobs;
+    - The Probe In and Probe Out sizes must be smaller than to 5 and 50 A, respectively;
+    - The Removal distance is limited must be smaller than 10 A.
+
+.. note:: 
+
+    If users are creating a locally configured KVFinder-web service, these limitation could be lifted from the source code.
 
 Publicly available KVFinder-web service
 =======================================
@@ -77,7 +72,7 @@ The KVFinder-web service uses port 8081 by default. If the local installation wa
 
 The queue information can be accessed at: http://localhost:8023/info.
 
-To use the PyMOL KVFinder-web Tools, users must change the server url hardcoded on the `__init__.py <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py>`_ file and reinstall the client plugin on PyMOL.
+To use the PyMOL KVFinder-web Tools, users must change the server url and port hardcoded on the `__init__.py <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py>`_ file and reinstall the client plugin on PyMOL.
 
 From:
 
@@ -85,6 +80,8 @@ From:
 
     # Server                                 #
     server = "http://parkvfinder.cnpem.br"   #
+    # Port                                   #
+    port = "8081"                            #
 
 to:
 
@@ -92,6 +89,8 @@ to:
 
     # Server                                 #
     server = "http://localhost"              #
+    # Port                                   #
+    port = "8081"                            #
 
 .. note:: 
 

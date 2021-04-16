@@ -187,40 +187,27 @@
             
   <div class="section" id="overview">
 <h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
-<p>KVFinder-web service is a RESTful web service that runs <a href="#id1"><span class="problematic" id="id2">`parKVFinder &lt;https://github.com/LBC-LNBio/parKVFinder`_</span></a> software to detect and chacterize cavities. The web service has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container, making available to execute on different platforms and Cloud services.</p>
+<p>KVFinder-web service is a RESTful web service that runs <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder">parKVFinder</a> software to detect and chacterize cavities. The web service has Web-Queue-Worker architecture style and each of these modules is built in a separated Docker container, making available to execute on different platforms and Cloud services.</p>
 <p>The web server module receives jobs requests in JSON. If the request is valid, it returns a response with a unique id. This id is create by the web server that applies a hash function into the received data, which include detection parameters and the molecular structures. Otherwise, it returns an HTTP error code with an error message. The client must send a request with an id and the web server module returns “queued”, “running” or “completed” together with the respective results.</p>
 <p>The queue module uses Ocypod software that receives jobs accepted by the web server module.</p>
 <p>The worker module communicate with queue module, requesting “queued” jobs, that will be processed with parKVFinder software. After completion, the job results are sent back to the queue module and made available to the client via the web server module.</p>
 </div>
 <div class="section" id="web-service-configuration">
 <h1>Web service configuration<a class="headerlink" href="#web-service-configuration" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<dl class="last docutils">
-<dt>Describe configuration:</dt>
-<dd><ul class="first last simple">
-<li>Job timeout: 30 minutes</li>
-<li>Job expiration: 1 day</li>
-<li>Maximum payload  (JSON input): 1 Mb</li>
+<p>The web service has a Job timeout of 30 minutes (maximum time that a accepted job could run on the KVFinder-web service), completed jobs will be available on the web service up to <strong>1 day</strong> after completion, and the maximum payload (maximum size of the JSON) of the data sent to the KVFinder-web service is 1 Mb.</p>
+<p>Further, the KVFinder-web service has some limitations, compared to a local installation of parKVFinder, that are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Cavity representation will be always filtered (cavity files will consume less space on the web service);</li>
+<li>The custom box cannot be much bigger than the 3D grid in order to avoid unnecessary calculation;</li>
+<li>The grid spacing must be 0.6 A to avoid unnecessary time-consuming jobs;</li>
+<li>The Probe In and Probe Out sizes must be smaller than to 5 and 50 A, respectively;</li>
+<li>The Removal distance is limited must be smaller than 10 A.</li>
 </ul>
-</dd>
-<dt>Limitations:</dt>
-<dd><ul class="first last simple">
-<li>Cavity representation always filtered</li>
-<li>Custom box cannot be much bigger than the 3D grid</li>
-<li>Grid spacing must be 0.6 A</li>
-<li>Probe Out &lt;= 50A</li>
-<li>Probe In &lt;= 5A</li>
-<li>Removal distance &lt;= 10A</li>
-</ul>
-</dd>
-<dt>Describe JSONs:</dt>
-<dd><ul class="first last simple">
-<li>Inputs</li>
-<li>Outputs</li>
-</ul>
-</dd>
-</dl>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If users are creating a locally configured KVFinder-web service, these limitation could be lifted from the source code.</p>
 </div>
 </div>
 <div class="section" id="publicly-available-kvfinder-web-service">
@@ -255,15 +242,19 @@
 </div>
 <p>The KVFinder-web service uses port 8081 by default. If the local installation was successfully, the locally configured KVFinder-web service is available at: <a class="reference external" href="http://localhost:8081">http://localhost:8081</a>. If you access the url on a browser, it should display a text message like: “KVFinder Web”.</p>
 <p>The queue information can be accessed at: <a class="reference external" href="http://localhost:8023/info">http://localhost:8023/info</a>.</p>
-<p>To use the PyMOL KVFinder-web Tools, users must change the server url hardcoded on the <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py">__init__.py</a> file and reinstall the client plugin on PyMOL.</p>
+<p>To use the PyMOL KVFinder-web Tools, users must change the server url and port hardcoded on the <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py">__init__.py</a> file and reinstall the client plugin on PyMOL.</p>
 <p>From:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Server                                 #</span>
 <span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://parkvfinder.cnpem.br&quot;</span>   <span class="c1">#</span>
+<span class="c1"># Port                                   #</span>
+<span class="nv">port</span> <span class="o">=</span> <span class="s2">&quot;8081&quot;</span>                            <span class="c1">#</span>
 </pre></div>
 </div>
 <p>to:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Server                                 #</span>
 <span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://localhost&quot;</span>              <span class="c1">#</span>
+<span class="c1"># Port                                   #</span>
+<span class="nv">port</span> <span class="o">=</span> <span class="s2">&quot;8081&quot;</span>                            <span class="c1">#</span>
 </pre></div>
 </div>
 <div class="admonition note">
