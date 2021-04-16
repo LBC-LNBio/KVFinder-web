@@ -17,10 +17,10 @@ The web service has a Job timeout of 30 minutes (maximum time that a accepted jo
 Further, the KVFinder-web service has some limitations, compared to a local installation of parKVFinder, that are:
 
     - Cavity representation will be always filtered (cavity files will consume less space on the web service);
-    - The custom box cannot be much bigger than the 3D grid in order to avoid unnecessary calculation;
+    - The custom box (Box adjustment mode) cannot be much bigger than the 3D grid in order to avoid unnecessary calculations;
     - The grid spacing must be 0.6 A to avoid unnecessary time-consuming jobs;
-    - The Probe In and Probe Out sizes must be smaller than to 5 and 50 A, respectively;
-    - The Removal distance is limited must be smaller than 10 A.
+    - The Probe In and Probe Out sizes must be smaller than to 5 and 50 A, respectively, to avoid unnecessary time-consuming jobs;
+    - The Removal distance is limited must be smaller than 10 A to avoid unnecessary time-consuming jobs.
 
 .. note:: 
 
