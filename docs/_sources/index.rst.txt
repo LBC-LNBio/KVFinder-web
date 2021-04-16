@@ -28,8 +28,8 @@ Users may opt to run jobs on a locally configured server or on our publicly avai
    :maxdepth: 1
    :caption: GitHub repositories
 
-   PyMOL KVFinder-web Tools <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools>
    KVFinder-web service <https://github.com/LBC-LNBio/KVFinder-web-service>
+   PyMOL KVFinder-web Tools <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools>
 
 .. toctree::
    :maxdepth: 1
