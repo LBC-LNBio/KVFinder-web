@@ -12,15 +12,16 @@ PyMOL KVFinder-web Tools is a PyMOL v2 plugin for detecting and characterizing b
 
 Afterwards, install the required Python packages from `requirements.txt <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/master/requirements.txt>`_ file on PyMOL's Python.
 
-```bash
-pip3 install -r requirements.txt
-```
+.. code-block:: bash
+    
+    pip3 install -r requirements.txt
 
 or directly,
 
-```bash
-pip3 install pyqt5 toml typing
-```
+.. code-block:: bash
+    
+    pip3 install pyqt5 toml typing
+
 
 Now, download the latest version of PyMOL KVFinder-web Tools from `here <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip>`_.
 
