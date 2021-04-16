@@ -15,21 +15,21 @@ Web service configuration
 .. todo::
     
     Describe configuration:
-    - Job timeout: 30 minutes
-    - Job expiration: 1 day
-    - Maximum payload  (JSON input): 1 Mb
+        - Job timeout: 30 minutes
+        - Job expiration: 1 day
+        - Maximum payload  (JSON input): 1 Mb
 
     Limitations:
-    - Cavity representation always filtered
-    - Custom box cannot be much bigger than the 3D grid
-    - Grid spacing must be 0.6 A
-    - Probe Out <= 50A
-    - Probe In <= 5A
-    - Removal distance <= 10A
+        - Cavity representation always filtered
+        - Custom box cannot be much bigger than the 3D grid
+        - Grid spacing must be 0.6 A
+        - Probe Out <= 50A
+        - Probe In <= 5A
+        - Removal distance <= 10A
 
     Describe JSONs:
-    - Inputs
-    - Outputs
+        - Inputs
+        - Outputs
 
 API reference
 =============
