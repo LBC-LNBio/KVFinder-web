@@ -300,48 +300,48 @@
 </li>
 </ul>
 <p>Example of job request:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
-    &quot;pdb&quot;: [
-        &quot;MODEL        1\n&quot;,
-        &quot;ATOM      1  N   GLU E  13      -6.693 -15.642 -14.858  1.00100.00           N  \n&quot;,
-        (...)
-        &quot;END\n&quot;
-    ],
-    &quot;settings&quot;: {
-        &quot;modes&quot;: {
-        &quot;whole_protein_mode&quot;: true,
-        &quot;box_mode&quot;: false,
-        &quot;resolution_mode&quot;: &quot;Low&quot;,
-        &quot;surface_mode&quot;: true,
-        &quot;kvp_mode&quot;: false,
-        &quot;ligand_mode&quot;: false
-        },
-        &quot;step_size&quot;: {
-        &quot;step_size&quot;: 0.0
-        },
-        &quot;probes&quot;: {
-        &quot;probe_in&quot;: 1.4,
-        &quot;probe_out&quot;: 4.0
-        },
-        &quot;cutoffs&quot;: {
-        &quot;volume_cutoff&quot;: 5.0,
-        &quot;ligand_cutoff&quot;: 5.0,
-        &quot;removal_distance&quot;: 0.0
-        },
-        &quot;visiblebox&quot;: {
-        &quot;p1&quot;: { &quot;x&quot;: 0.0, &quot;y&quot;: 0.0, &quot;z&quot;: 0.0 },
-        &quot;p2&quot;: { &quot;x&quot;: 0.0, &quot;y&quot;: 0.0, &quot;z&quot;: 0.0 },
-        &quot;p3&quot;: { &quot;x&quot;: 0.0, &quot;y&quot;: 0.0, &quot;z&quot;: 0.0 },
-        &quot;p4&quot;: { &quot;x&quot;: 0.0, &quot;y&quot;: 0.0, &quot;z&quot;: 0.0 }
-        },
-        &quot;internalbox&quot;: {
-        &quot;p1&quot;: { &quot;x&quot;: -4.0, &quot;y&quot;: -4.0, &quot;z&quot;: -4.0 },
-        &quot;p2&quot;: { &quot;x&quot;: 4.0, &quot;y&quot;: -4.0, &quot;z&quot;: -4.0 },
-        &quot;p3&quot;: { &quot;x&quot;: -4.0, &quot;y&quot;: 4.0, &quot;z&quot;: -4.0 },
-        &quot;p4&quot;: { &quot;x&quot;: -4.0, &quot;y&quot;: -4.0, &quot;z&quot;: 4.0 }
-        }
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;pdb&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;MODEL        1\n&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ATOM      1  N   GLU E  13      -6.693 -15.642 -14.858  1.00100.00           N  \n&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;(...)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;END\n&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;modes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;whole_protein_mode&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;box_mode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;resolution_mode&quot;</span><span class="p">:</span> <span class="s2">&quot;Low&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;surface_mode&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nt">&quot;kvp_mode&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nt">&quot;ligand_mode&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;step_size&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;step_size&quot;</span><span class="p">:</span> <span class="mf">0.0</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;probes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;probe_in&quot;</span><span class="p">:</span> <span class="mf">1.4</span><span class="p">,</span>
+        <span class="nt">&quot;probe_out&quot;</span><span class="p">:</span> <span class="mf">4.0</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;cutoffs&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;volume_cutoff&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+        <span class="nt">&quot;ligand_cutoff&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+        <span class="nt">&quot;removal_distance&quot;</span><span class="p">:</span> <span class="mf">0.0</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;visiblebox&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;p1&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="mf">0.0</span> <span class="p">},</span>
+        <span class="nt">&quot;p2&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="mf">0.0</span> <span class="p">},</span>
+        <span class="nt">&quot;p3&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="mf">0.0</span> <span class="p">},</span>
+        <span class="nt">&quot;p4&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="mf">0.0</span> <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;internalbox&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;p1&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">-4.0</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mf">-4.0</span><span class="p">,</span> <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="mf">-4.0</span> <span class="p">},</span>
+        <span class="nt">&quot;p2&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mf">-4.0</span><span class="p">,</span> <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="mf">-4.0</span> <span class="p">},</span>
+        <span class="nt">&quot;p3&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">-4.0</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mf">4.0</span><span class="p">,</span> <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="mf">-4.0</span> <span class="p">},</span>
+        <span class="nt">&quot;p4&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mf">-4.0</span><span class="p">,</span> <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mf">-4.0</span><span class="p">,</span> <span class="nt">&quot;z&quot;</span><span class="p">:</span> <span class="mf">4.0</span> <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <ul>

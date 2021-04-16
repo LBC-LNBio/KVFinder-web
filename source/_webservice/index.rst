@@ -135,7 +135,7 @@ Example of job request:
         "pdb": [
             "MODEL        1\n",
             "ATOM      1  N   GLU E  13      -6.693 -15.642 -14.858  1.00100.00           N  \n",
-            (...)
+            "(...)",
             "END\n"
         ],
         "settings": {
