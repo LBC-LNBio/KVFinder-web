@@ -10,7 +10,7 @@ PyMOL KVFinder-web Tools is a PyMOL v2 plugin for detecting and characterizing b
 
 `PyMOL v2 <https://pymol.org/2/>`_ is required if you wish to use PyMOL KVFinder-web Tools.
 
-Afterwards, install the required Python packages from [requirements.txt](https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/master/requirements.txt) file on PyMOL's Python.
+Afterwards, install the required Python packages from `requirements.txt <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/master/requirements.txt>`_ file on PyMOL's Python.
 
 ```bash
 pip3 install -r requirements.txt
@@ -22,7 +22,7 @@ or directly,
 pip3 install pyqt5 toml typing
 ```
 
-Now, download the latest version of PyMOL KVFinder-web Tools from [here](https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip).
+Now, download the latest version of PyMOL KVFinder-web Tools from `here <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip>`_.
 
 1. Open PyMOL;
 2. Go to **Plugin** menu and select **Plugin Manager** option;
@@ -35,7 +35,7 @@ Now, download the latest version of PyMOL KVFinder-web Tools from [here](https:/
 9. Restart PyMOL;
 10. **PyMOL KVFinder-web Tools** is ready to use under **Plugin** menu.
 
-Or, if you clone this [repository](https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools), instead of selecting `PyMOL-KVFinder-web-Tools.zip` (Step 5), user must select `__init__.py` of PyMOL-KVFinder-web-Tools directory.
+Or, if you clone this `repository <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools`_, instead of selecting `PyMOL-KVFinder-web-Tools.zip` (Step 5), user must select `__init__.py` of PyMOL-KVFinder-web-Tools directory.
 
 Tutorial
 ========
