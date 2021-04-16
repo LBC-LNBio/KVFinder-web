@@ -192,7 +192,7 @@ After completion, load the job results by clicking on **Show** button on **Resul
 
 Now, let's customize the box parameters to segment the binding site of our target protein.
 
-Each axis is associated with one color (red with X, green with Y and blue with Z). The adjustment is made by the arrows or directly setting the value in the entry on the **Search Space** tab in the **Box Adjustment** group. We can also adjust the box angles by the same procedure. After altering the values, just click on **Redraw ** button to redraw the box object using the new values.
+Each axis is associated with one color (red with X, green with Y and blue with Z). The adjustment is made by the arrows or directly setting the value in the entry on the **Search Space** tab in the **Box Adjustment** group. We can also adjust the box angles by the same procedure. After altering the values, just click on **Redraw** button to redraw the box object using the new values.
 
 Then, on the **Search Space** tab, reduce **Maximum X** to 1.0 Å and click **Redraw Box**. Submit the job to KVFinder-web service.
 
