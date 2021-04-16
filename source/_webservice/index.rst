@@ -12,7 +12,7 @@ The worker module communicate with queue module, requesting "queued" jobs, that 
 Web service configuration
 =========================
 
-The web service has a Job timeout of 30 minutes (maximum time that a accepted job could run on the KVFinder-web service), completed jobs will be available on the web service up to **1 day** after completion, and the maximum payload (maximum size of the JSON) of the data sent to the KVFinder-web service is 1 Mb.
+The web service has a Job timeout of **30 minutes** (maximum time that a accepted job could run on the KVFinder-web service), completed jobs will be available on the web service up to **1 day** after completion, and the maximum payload (maximum size of the JSON) of the data sent to the KVFinder-web service is **1 Mb**.
 
 Further, the KVFinder-web service has some limitations, compared to a local installation of parKVFinder, that are:
 
