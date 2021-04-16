@@ -125,7 +125,7 @@ API reference
     
     - Method: POST
     - Media type: application/json
-    - URL: [[http://localthost:8081/create][http://localhost:8081/create]]
+    - URL: http://localthost:8081/create
 
 Example of job request:
 
@@ -196,3 +196,7 @@ Example of response obtained for a *job* with status "completed":
         "ended_at": "2021-04-16T11:40:17.701426882Z",
         "expires_after": "1day"
     }
+
+.. note:: 
+
+    If the KVFinder-web service is on another computer on your network, you must provide the IP Address instead of localhost.
