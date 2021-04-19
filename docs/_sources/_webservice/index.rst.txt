@@ -5,9 +5,9 @@ KVFinder-web service is a RESTful web service that runs `parKVFinder <https://gi
 
 The web server module receives HTTP POST requests in JSON. If the request is valid, it returns a response with an unique id. Otherwise, it returns an HTTP error code with an error message. This id is create by the web server that applies a hash function into the received data, which include detection parameters and the molecular structures. 
 
-The queue module uses Ocypod software to managed accepted jobs sent by the web server module. 
+The queue module uses Ocypod service (https://github.com/davechallis/ocypod) to manage accepted jobs sent by the web server module.
 
-The worker module communicate with queue module, requesting "queued" jobs, that will be processed with parKVFinder software. After completion, the job results are sent back to the queue module and made available to the client via the web server module. The client must send a HTTP request with an id and the web server module returns "queued", "running", or "completed" together with its respective results. 
+The worker module communicates with queue module, requesting "queued" jobs, that will be processed with parKVFinder software. After completion, the job results are sent back to the queue module and made available to the client via the web server module. In order, to get the job results back, the client must send a HTTP request with a valid id and the web server module returns the current job status - "queued", "running" or "completed" - together with its respective results if available.
 
 Web service configuration
 =========================
