@@ -29,7 +29,7 @@ Further, the KVFinder-web service has some limitations, compared to a local inst
 Publicly available KVFinder-web service
 =======================================
 
-We provide a publicly available KVFinder-web service (http://parkvfinder.cnpem.br), running in a Cloud environment. Hence, users may opt to run jobs on our public KVFinder-web service or on a locally configured server.
+We provide a publicly available KVFinder-web service (http://parkvfinder.cnpem.br:8081), running in a Cloud environment. Hence, users may opt to run jobs on our public KVFinder-web service or on a locally configured server.
 
 Local installation
 ==================
