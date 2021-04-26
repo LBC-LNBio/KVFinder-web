@@ -12,7 +12,7 @@ The KVFinder-web application has two components: a RESTful web service and a PyM
 
 Users may opt to run jobs on a locally configured server or on our publicly available KVFinder-web service, available at http://parkvfinder.cnpem.br:8081.
 
-In addition, users can install the standalone version of parKVFinder from this `repository <https://github.com/LBC-LNBio/parKVFinder>`_. For more details, see the parKVFinder `wiki <https://github.com/LBC-LNBio/parKVFinder/wiki>`_.
+Furthermore, users can install the standalone version of parKVFinder from this `repository <https://github.com/LBC-LNBio/parKVFinder>`_. For more details, see the parKVFinder `wiki <https://github.com/LBC-LNBio/parKVFinder/wiki>`_.
 
 .. toctree::
    :maxdepth: 1
