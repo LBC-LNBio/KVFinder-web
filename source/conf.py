@@ -20,11 +20,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'KVFinder-web'
-copyright = '2021, Joao Victor da Silva Guerra'
+copyright = '2021, LBC-LNBio'
 author = 'Joao Victor da Silva Guerra'
 
 # The short X.Y version
-version = ''
+version = '1.0'
 # The full version, including alpha/beta/rc tags
 release = '1.0.0'
 
@@ -61,7 +61,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = "en"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

@@ -1,5 +1,5 @@
-Overview
-========
+PyMOL KVFinder-web Tools
+########################
 
 The PyMOL KVFinder-web Tools is a user-friendly graphical user interface that enables customization of parKVFinder parameters for a target structure and submits jobs via HTTP POST request to a configured KVFinder-web service. After submission, jobs are routinely requested via HTTP GET request to the KVFinder-web service by a worker thread. When a job is finished, the worker thread automatically processes the incoming data to files.
 
