@@ -101,10 +101,13 @@
 <p>The KVFinder-web application has two independent components:</p>
 <ul class="simple">
 <li><p>a RESTful web service: [KVFinder-web service](<a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service">https://github.com/LBC-LNBio/KVFinder-web-service</a>);</p></li>
-<li><p>clients, that are:
-- [HTTP Client](<a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service/blob/master/http-client.py">https://github.com/LBC-LNBio/KVFinder-web-service/blob/master/http-client.py</a>): a Python script;
-- [KVFinder-web portal](<a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">https://github.com/LBC-LNBio/KVFinder-web-portal</a>): a graphical web portal;
-- [PyMOL KVFinder-web Tools](<a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools</a>): a graphical PyMOL plugin;</p></li>
+<li><p>clients, that are:</p>
+<ul>
+<li><p>[HTTP Client](<a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service/blob/master/http-client.py">https://github.com/LBC-LNBio/KVFinder-web-service/blob/master/http-client.py</a>): a Python script;</p></li>
+<li><p>[KVFinder-web portal](<a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">https://github.com/LBC-LNBio/KVFinder-web-portal</a>): a graphical web portal;</p></li>
+<li><p>[PyMOL KVFinder-web Tools](<a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools</a>): a graphical PyMOL plugin;</p></li>
+</ul>
+</li>
 </ul>
 <p>The RESTful web service (KVFinder-web service) handles requests from the clients, manages accepted jobs and performs cavity detection and characterization on accepted jobs.</p>
 <p>The clients (i.e., HTTP Client, PyMOL KVFinder-web Tools, KVFinder-web portal) sends job via HTTP requests to the web service, customize parKVFinder detection parameters and process job results.</p>

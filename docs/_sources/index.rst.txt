@@ -11,9 +11,13 @@ KVFinder-web is an open-source web-based application of `parKVFinder <https://gi
 The KVFinder-web application has two independent components:
 
 - a RESTful web service: [KVFinder-web service](https://github.com/LBC-LNBio/KVFinder-web-service);
+  
 - clients, that are:
+
   - [HTTP Client](https://github.com/LBC-LNBio/KVFinder-web-service/blob/master/http-client.py): a Python script;
+
   - [KVFinder-web portal](https://github.com/LBC-LNBio/KVFinder-web-portal): a graphical web portal;
+
   - [PyMOL KVFinder-web Tools](https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools): a graphical PyMOL plugin;
 
 The RESTful web service (KVFinder-web service) handles requests from the clients, manages accepted jobs and performs cavity detection and characterization on accepted jobs. 
