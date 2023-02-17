@@ -1,29 +1,30 @@
-PyMOL KVFinder-web Tools
-########################
+.. _PyMOL parKVFinder Tools: https://github.com/LBC-LNBio/parKVFinder/wiki/parKVFinder-Tutorial#pymol2-parkvfinder-tools
 
-The PyMOL KVFinder-web Tools is a user-friendly graphical user interface that enables customization of parKVFinder parameters for a target structure and submits jobs via HTTP POST request to a configured KVFinder-web service. After submission, jobs are routinely requested via HTTP GET request to the KVFinder-web service by a worker thread. When a job is finished, the worker thread automatically processes the incoming data to files.
+.. _PyMOL v2: https://pymol.org/2/
+
+.. _requirements.txt: https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/requirements.txt
+
+.. _pymol-kvfinder-web-tools:
+
+PyMOL KVFinder-web Tools
+========================
+
+The PyMOL KVFinder-web Tools, written in Python and Qt, is a user-friendly PyMOL v2.x plugin for detecting and characterizing biomolecular cavities at a KVFinder-web service with functionalities similar to `PyMOL parKVFinder Tools`_, which is natively configured to our publicly available web service (http://kvfinder-web.cnpem.br).
+
+Our PyMOL plugin enables customization of parKVFinder parameters for a target structure and submits jobs via HTTP POST request to a configured KVFinder-web service. After submission, jobs are routinely requested via HTTP GET request to the KVFinder-web service by a worker thread. When a job is finished, the worker thread automatically processes the incoming data to files.
 
 Installation
-============
+------------
 
-PyMOL KVFinder-web Tools is a PyMOL v2 plugin for detecting and characterizing biomolecular cavities at a KVFinder-web service, which is natively configured to our publicly available web service (http://parkvfinder.cnpem.br:8081).
+`PyMOL v2`_ is required if you wish to use PyMOL KVFinder-web Tools.
 
-`PyMOL v2 <https://pymol.org/2/>`_ is required if you wish to use PyMOL KVFinder-web Tools.
-
-Afterwards, install the required Python packages from `requirements.txt <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/master/requirements.txt>`_ file on PyMOL's Python.
+To install the Python dependencies from `requirements.txt`_, run:
 
 .. code-block:: bash
     
     pip3 install -r requirements.txt
 
-or directly,
-
-.. code-block:: bash
-    
-    pip3 install pyqt5 toml typing
-
-
-Now, download the latest version of PyMOL KVFinder-web Tools from `here <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip>`_.
+To install PyMOL KVFinder-web Tools, download the latest version of PyMOL KVFinder-web Tools from `here <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip>`_. Now, follow these steps:
 
 1. Open PyMOL;
 2. Go to **Plugin** menu and select **Plugin Manager** option;
@@ -36,17 +37,17 @@ Now, download the latest version of PyMOL KVFinder-web Tools from `here <https:/
 9. Restart PyMOL;
 10. **PyMOL KVFinder-web Tools** is ready to use under **Plugin** menu.
 
-Or, if you clone this `repository <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools>`_, instead of selecting `PyMOL-KVFinder-web-Tools.zip` (Step 5), user must select `__init__.py` of PyMOL-KVFinder-web-Tools directory.
+Or, if you clone this `repository <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools>`_, instead of selecting `PyMOL-KVFinder-web-Tools.zip <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip>`_ (Step 5), user must select `__init__.py` of PyMOL-KVFinder-web-Tools directory.
 
 Tutorial
-========
+--------
 
 On this tutorial, we are going to demonstrate how to use PyMOL KVFinder-web Tools with our publicly available KVFinder-web service.
 
 All files used on this tutorial can be found under examples directory, on the PyMOL KVFinder-web Tools `repository <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools>`_.
 
 Whole protein detection
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 First, load examples/1FMO.pdb into PyMOL. The **1FMO** is the catalytic subunit of a cAMP-dependent protein kinase (cAPK). 
 
@@ -163,7 +164,7 @@ Furthermore, changing the cavity boundary by varying Probe Out and Removal Dista
     Usually the Removal Distance adjustment is less time consuming than the Probe Out adjustment for similar effects.
 
 Steered detection
------------------
+~~~~~~~~~~~~~~~~~
 
 An important feature of parKVFinder is the steered detection of cavities. We continue our tutorial illustrating two distinct methods of cavity segmentation.
 
@@ -238,7 +239,7 @@ After completion, load the job results by clicking on **Show** button on **Resul
     :width: 800
 
 Submitting an already sent job
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users may submit a job that have already been submitted to the KVFinder-web service and the job is still available on the web service.
 
@@ -253,7 +254,7 @@ For instance, resubmit your last job.
     :width: 800
 
 Retrieving a Job by its ID
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Users may share their jobs with colleagues by the **Job ID** that they receive when submitting a job.
 

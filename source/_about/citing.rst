@@ -1,10 +1,13 @@
-Citing KVFinder-web
-===================
+Citing
+======
 
-For our cavity detection and characterization software, cite:
+For our cavity detection and characterization software, cite: :cite:`parkvfinder`.
 
-João Victor da Silva Guerra, Helder Veras Ribeiro Filho, Leandro Oliveira Bortot, Rodrigo Vargas Honorato, José Geraldo de Carvalho Pereira, Paulo Sergio Lopes de Oliveira, ParKVFinder: A thread-level parallel approach in biomolecular cavity detection, SoftwareX, 2020, https://doi.org/10.1016/j.softx.2020.100606
+For our KVFinder-web project, which includes KVFinder-web service, KVFinder-web portal and PyMOL KVFinder-web Tools, cite: :cite:`kvfinder-web`.
 
-For our KVFinder-web, cite:
+For our cavity detection algorithm, cite: :cite:`kvfinder`.
 
-.. Insert citation here
+.. rubric:: References
+
+.. bibliography::
+    :style: plain

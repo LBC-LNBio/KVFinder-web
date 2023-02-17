@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTTP client &mdash; KVFinder-web 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/icon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Issues" href="../_about/issues.html" />
+    <link rel="prev" title="PyMOL KVFinder-web Tools" href="../_plugin/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            KVFinder-web
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">RESTful web service</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_web_service/index.html">KVFinder-web service</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Clients</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../_web_portal/index.html">KVFinder-web portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_plugin/index.html">PyMOL KVFinder-web Tools</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">HTTP client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tutorial">Tutorial</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">GitHub repositories</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service">KVFinder-web service</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">KVFinder-web portal</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">PyMOL KVFinder-web Tools</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder">parKVFinder</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../_about/issues.html">Issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/scientific_team.html">Scientific team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/citing.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/license.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KVFinder-web</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">HTTP client</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/_http_client/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="http-client">
+<span id="id1"></span><h1>HTTP client<a class="headerlink" href="#http-client" title="Permalink to this heading"></a></h1>
+<p>Besides our interactive graphical clients, we provide an example of a simple Python HTTP client to interact with KVFinder-web service via <code class="docutils literal notranslate"><span class="pre">requests</span></code> package.</p>
+<p>This client provides an example of a template in Python that can be run to access our web service and parse the output data. It is composed of two objects:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">KVJob</span></code>: create a job using a pdb file with hard-coded parameters;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KVHTTPClient</span></code>: create the HTTP client with server url and port and methods to run, submit and get results of a job.</p></li>
+</ul>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
+<p>To install the Python dependencies from <a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service/blob/master/requirements.txt">requirements.txt</a>, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install -r requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="tutorial">
+<h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h2>
+<p>First of all, to execute our example of a Python HTTP client, you must import <code class="docutils literal notranslate"><span class="pre">http_client</span></code> objects:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">http_client</span> <span class="kn">import</span> <span class="n">KVJob</span><span class="p">,</span> <span class="n">KVHTTPClient</span>
+</pre></div>
+</div>
+<p>Then, you must create and configure a KVHTTPClient with server url and port.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">KVHTTPClient</span><span class="p">(</span><span class="s2">&quot;http://kvfinder-web.cnpem.br&quot;</span><span class="p">,</span> <span class="s2">&quot;8081&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With the client created, you must create a job and run it, so run:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">job</span> <span class="o">=</span> <span class="n">KVJob</span><span class="p">(</span><span class="s2">&quot;examples/1FMO.pdb&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">client</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+<span class="go">{&#39;id&#39;: &#39;4990580026958948489&#39;, &#39;status&#39;: &#39;running&#39;, &#39;output&#39;: None, &#39;created_at&#39;: &#39;2023-02-17T21:14:46.518650658Z&#39;, &#39;started_at&#39;: &#39;2023-02-17T21:14:47.837688140Z&#39;, &#39;ended_at&#39;: None, &#39;expires_after&#39;: &#39;1day&#39;}</span>
+<span class="go">Job completed!</span>
+</pre></div>
+</div>
+<p>After completion, you can print the results or save it to files:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>
+<span class="go"># TOML results file for parKVFinder software</span>
+
+<span class="go">title = &quot;parKVFinder results file&quot;</span>
+
+<span class="go">[FILES_PATH]</span>
+<span class="go">INPUT = &quot;/jobs/1/protein.pdb&quot;</span>
+<span class="go">OUTPUT = &quot;./KV_Files/KVFinderWeb/KVFinderWeb.KVFinder.output.pdb&quot;</span>
+<span class="go">LIGAND = &quot;./ligand.pdb&quot;</span>
+
+<span class="go">[PARAMETERS]</span>
+<span class="go">RESOLUTION = &quot;Low&quot;</span>
+<span class="go">STEP_SIZE = 0.60</span>
+
+<span class="go">[RESULTS]</span>
+<span class="go"># Volume, area and interface residues information for each cavity</span>
+
+<span class="go">    [RESULTS.VOLUME]</span>
+<span class="go">    # Volume unit is cubic angstrom</span>
+<span class="go">    KAA = 151.85</span>
+<span class="go">    KAB = 42.77</span>
+<span class="go">    KAC = 60.05</span>
+<span class="go">    KAD = 39.96</span>
+<span class="go">    KAE = 9.50</span>
+<span class="go">    KAF = 529.42</span>
+<span class="go">    KAG = 17.28</span>
+<span class="go">    KAH = 32.18</span>
+<span class="go">    KAI = 44.93</span>
+<span class="go">    KAJ = 35.64</span>
+<span class="go">    KAK = 9.29</span>
+<span class="go">    KAL = 99.58</span>
+<span class="go">    KAM = 20.09</span>
+<span class="go">    KAN = 7.99</span>
+<span class="go">    KAO = 11.23</span>
+
+<span class="go">    [RESULTS.AREA]</span>
+<span class="go">    # Area unit is square angstrom</span>
+<span class="go">    KAA = 121.32</span>
+<span class="go">    KAB = 50.89</span>
+<span class="go">    KAC = 58.60</span>
+<span class="go">    KAD = 46.49</span>
+<span class="go">    KAE = 19.75</span>
+<span class="go">    KAF = 460.40</span>
+<span class="go">    KAG = 35.16</span>
+<span class="go">    KAH = 43.86</span>
+<span class="go">    KAI = 54.54</span>
+<span class="go">    KAJ = 46.74</span>
+<span class="go">    KAK = 19.76</span>
+<span class="go">    KAL = 111.94</span>
+<span class="go">    KAM = 26.75</span>
+<span class="go">    KAN = 16.03</span>
+<span class="go">    KAO = 17.33</span>
+
+<span class="go">    [RESULTS.RESIDUES]</span>
+<span class="go">    # Interface residues for each cavity</span>
+<span class="go">    # [&quot;residue number&quot;,&quot;chain identifier&quot;,&quot;residue name&quot;]</span>
+<span class="go">    KAA = [[&quot;306&quot;,&quot;E&quot;,&quot;Y&quot;],[&quot;14&quot;,&quot;E&quot;,&quot;S&quot;],[&quot;15&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;18&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;19&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;100&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;152&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;155&quot;,&quot;E&quot;,&quot;E&quot;],[&quot;156&quot;,&quot;E&quot;,&quot;Y&quot;],[&quot;292&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;302&quot;,&quot;E&quot;,&quot;W&quot;],[&quot;303&quot;,&quot;E&quot;,&quot;I&quot;]]</span>
+<span class="go">    KAB = [[&quot;156&quot;,&quot;E&quot;,&quot;Y&quot;],[&quot;18&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;22&quot;,&quot;E&quot;,&quot;A&quot;],[&quot;25&quot;,&quot;E&quot;,&quot;D&quot;],[&quot;26&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;29&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;97&quot;,&quot;E&quot;,&quot;A&quot;],[&quot;98&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;99&quot;,&quot;E&quot;,&quot;N&quot;]]</span>
+<span class="go">    KAC = [[&quot;313&quot;,&quot;E&quot;,&quot;P&quot;],[&quot;141&quot;,&quot;E&quot;,&quot;P&quot;],[&quot;142&quot;,&quot;E&quot;,&quot;H&quot;],[&quot;144&quot;,&quot;E&quot;,&quot;R&quot;],[&quot;145&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;148&quot;,&quot;E&quot;,&quot;A&quot;],[&quot;299&quot;,&quot;E&quot;,&quot;T&quot;],[&quot;300&quot;,&quot;E&quot;,&quot;T&quot;],[&quot;305&quot;,&quot;E&quot;,&quot;I&quot;],[&quot;310&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;311&quot;,&quot;E&quot;,&quot;E&quot;]]</span>
+<span class="go">    KAD = [[&quot;106&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;95&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;98&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;99&quot;,&quot;E&quot;,&quot;N&quot;],[&quot;100&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;103&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;104&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;105&quot;,&quot;E&quot;,&quot;K&quot;]]</span>
+<span class="go">    KAE = [[&quot;181&quot;,&quot;E&quot;,&quot;Q&quot;],[&quot;123&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;124&quot;,&quot;E&quot;,&quot;A&quot;],[&quot;125&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;175&quot;,&quot;E&quot;,&quot;D&quot;],[&quot;176&quot;,&quot;E&quot;,&quot;Q&quot;]]</span>
+<span class="go">    KAF = [[&quot;327&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;49&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;50&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;51&quot;,&quot;E&quot;,&quot;T&quot;],[&quot;52&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;53&quot;,&quot;E&quot;,&quot;S&quot;],[&quot;54&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;55&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;56&quot;,&quot;E&quot;,&quot;R&quot;],[&quot;57&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;70&quot;,&quot;E&quot;,&quot;A&quot;],[&quot;72&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;74&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;84&quot;,&quot;E&quot;,&quot;Q&quot;],[&quot;87&quot;,&quot;E&quot;,&quot;H&quot;],[&quot;88&quot;,&quot;E&quot;,&quot;T&quot;],[&quot;91&quot;,&quot;E&quot;,&quot;E&quot;],[&quot;104&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;120&quot;,&quot;E&quot;,&quot;M&quot;],[&quot;121&quot;,&quot;E&quot;,&quot;E&quot;],[&quot;122&quot;,&quot;E&quot;,&quot;Y&quot;],[&quot;123&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;127&quot;,&quot;E&quot;,&quot;E&quot;],[&quot;166&quot;,&quot;E&quot;,&quot;D&quot;],[&quot;168&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;170&quot;,&quot;E&quot;,&quot;E&quot;],[&quot;171&quot;,&quot;E&quot;,&quot;N&quot;],[&quot;173&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;183&quot;,&quot;E&quot;,&quot;T&quot;],[&quot;184&quot;,&quot;E&quot;,&quot;D&quot;],[&quot;186&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;187&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;200&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;201&quot;,&quot;E&quot;,&quot;T&quot;]]</span>
+<span class="go">    KAG = [[&quot;314&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;131&quot;,&quot;E&quot;,&quot;H&quot;],[&quot;138&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;142&quot;,&quot;E&quot;,&quot;H&quot;],[&quot;146&quot;,&quot;E&quot;,&quot;Y&quot;],[&quot;174&quot;,&quot;E&quot;,&quot;I&quot;]]</span>
+<span class="go">    KAH = [[&quot;350&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;33&quot;,&quot;E&quot;,&quot;P&quot;],[&quot;89&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;92&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;93&quot;,&quot;E&quot;,&quot;R&quot;],[&quot;96&quot;,&quot;E&quot;,&quot;Q&quot;],[&quot;349&quot;,&quot;E&quot;,&quot;E&quot;]]</span>
+<span class="go">    KAI = [[&quot;330&quot;,&quot;E&quot;,&quot;Y&quot;],[&quot;49&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;126&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;127&quot;,&quot;E&quot;,&quot;E&quot;],[&quot;129&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;130&quot;,&quot;E&quot;,&quot;S&quot;],[&quot;326&quot;,&quot;E&quot;,&quot;N&quot;],[&quot;327&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;328&quot;,&quot;E&quot;,&quot;D&quot;]]</span>
+<span class="go">    KAJ = [[&quot;336&quot;,&quot;E&quot;,&quot;R&quot;],[&quot;55&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;56&quot;,&quot;E&quot;,&quot;R&quot;],[&quot;73&quot;,&quot;E&quot;,&quot;I&quot;],[&quot;74&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;75&quot;,&quot;E&quot;,&quot;D&quot;],[&quot;115&quot;,&quot;E&quot;,&quot;N&quot;],[&quot;335&quot;,&quot;E&quot;,&quot;I&quot;]]</span>
+<span class="go">    KAK = [[&quot;217&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;163&quot;,&quot;E&quot;,&quot;I&quot;],[&quot;191&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;193&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;195&quot;,&quot;E&quot;,&quot;T&quot;],[&quot;215&quot;,&quot;E&quot;,&quot;Y&quot;],[&quot;216&quot;,&quot;E&quot;,&quot;N&quot;]]</span>
+<span class="go">    KAL = [[&quot;223&quot;,&quot;E&quot;,&quot;A&quot;],[&quot;165&quot;,&quot;E&quot;,&quot;R&quot;],[&quot;166&quot;,&quot;E&quot;,&quot;D&quot;],[&quot;167&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;199&quot;,&quot;E&quot;,&quot;C&quot;],[&quot;200&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;201&quot;,&quot;E&quot;,&quot;T&quot;],[&quot;204&quot;,&quot;E&quot;,&quot;Y&quot;],[&quot;205&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;206&quot;,&quot;E&quot;,&quot;A&quot;],[&quot;209&quot;,&quot;E&quot;,&quot;I&quot;],[&quot;219&quot;,&quot;E&quot;,&quot;V&quot;],[&quot;220&quot;,&quot;E&quot;,&quot;D&quot;],[&quot;222&quot;,&quot;E&quot;,&quot;W&quot;]]</span>
+<span class="go">    KAM = [[&quot;273&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;222&quot;,&quot;E&quot;,&quot;W&quot;],[&quot;238&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;253&quot;,&quot;E&quot;,&quot;G&quot;],[&quot;254&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;255&quot;,&quot;E&quot;,&quot;V&quot;]]</span>
+<span class="go">    KAN = [[&quot;256&quot;,&quot;E&quot;,&quot;R&quot;],[&quot;229&quot;,&quot;E&quot;,&quot;Y&quot;],[&quot;237&quot;,&quot;E&quot;,&quot;P&quot;],[&quot;238&quot;,&quot;E&quot;,&quot;F&quot;],[&quot;249&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;254&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;255&quot;,&quot;E&quot;,&quot;V&quot;]]</span>
+<span class="go">    KAO = [[&quot;277&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;207&quot;,&quot;E&quot;,&quot;P&quot;],[&quot;208&quot;,&quot;E&quot;,&quot;E&quot;],[&quot;211&quot;,&quot;E&quot;,&quot;L&quot;],[&quot;213&quot;,&quot;E&quot;,&quot;K&quot;],[&quot;275&quot;,&quot;E&quot;,&quot;V&quot;]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">cavity</span><span class="p">)</span>
+<span class="go">ATOM      1  HS  KAA   259      -6.600 -11.400 -10.800  1.00  0.00</span>
+<span class="go">ATOM      2  H   KAA   259      -6.600 -11.400 -10.200  1.00  0.00</span>
+<span class="gp">...</span>
+<span class="go">ATOM   5146  HS  KAO   259      25.800  -9.600 -10.800  1.00  0.00</span>
+<span class="go">ATOM   5147  HS  KAO   259      26.400  -9.600 -11.400  1.00  0.00</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">job</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cavity</span><span class="o">=</span><span class="s2">&quot;cavity.pdb&quot;</span><span class="p">,</span> <span class="n">report</span><span class="o">=</span><span class="s2">&quot;report.toml&quot;</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="s2">&quot;job.log&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For more information about our example of a Python HTTP client, the source code is available <a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service/blob/master/http_client.py">here</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../_plugin/index.html" class="btn btn-neutral float-left" title="PyMOL KVFinder-web Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../_about/issues.html" class="btn btn-neutral float-right" title="Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, LBC-LNBio.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PyMOL KVFinder-web Tools &mdash; KVFinder-web 1.0.0 documentation</title>
@@ -12,15 +12,14 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Issues" href="../_about/issues.html" />
+    <link rel="next" title="HTTP client" href="../_http_client/index.html" />
     <link rel="prev" title="KVFinder-web portal" href="../_web_portal/index.html" /> 
 </head>
 
@@ -29,30 +28,31 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> KVFinder-web
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            KVFinder-web
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
                 1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">KVFinder-web service</span></p>
+              <p class="caption" role="heading"><span class="caption-text">RESTful web service</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../_web_service/index.html">KVFinder-web service</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">KVFinder-web portal</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../_web_portal/index.html">KVFinder-web portal</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Clients</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../_web_portal/index.html">KVFinder-web portal</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PyMOL KVFinder-web Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tutorial">Tutorial</a><ul>
@@ -71,6 +71,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../_http_client/index.html">HTTP client</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">GitHub repositories</span></p>
 <ul>
@@ -83,7 +84,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../_about/issues.html">Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../_about/scientific_team.html">Scientific team</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../_about/citing.html">Citing KVFinder-web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/citing.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../_about/license.html">License</a></li>
 </ul>
 
         </div>
@@ -99,7 +102,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">PyMOL KVFinder-web Tools</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/_plugin/index.rst.txt" rel="nofollow"> View page source</a>
@@ -111,21 +114,17 @@
            <div itemprop="articleBody">
              
   <section id="pymol-kvfinder-web-tools">
-<h1>PyMOL KVFinder-web Tools<a class="headerlink" href="#pymol-kvfinder-web-tools" title="Permalink to this heading"></a></h1>
-<p>The PyMOL KVFinder-web Tools is a user-friendly graphical user interface that enables customization of parKVFinder parameters for a target structure and submits jobs via HTTP POST request to a configured KVFinder-web service. After submission, jobs are routinely requested via HTTP GET request to the KVFinder-web service by a worker thread. When a job is finished, the worker thread automatically processes the incoming data to files.</p>
+<span id="id1"></span><h1>PyMOL KVFinder-web Tools<a class="headerlink" href="#pymol-kvfinder-web-tools" title="Permalink to this heading"></a></h1>
+<p>The PyMOL KVFinder-web Tools, written in Python and Qt, is a user-friendly PyMOL v2.x plugin for detecting and characterizing biomolecular cavities at a KVFinder-web service with functionalities similar to <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder/wiki/parKVFinder-Tutorial#pymol2-parkvfinder-tools">PyMOL parKVFinder Tools</a>, which is natively configured to our publicly available web service (<a class="reference external" href="http://kvfinder-web.cnpem.br">http://kvfinder-web.cnpem.br</a>).</p>
+<p>Our PyMOL plugin enables customization of parKVFinder parameters for a target structure and submits jobs via HTTP POST request to a configured KVFinder-web service. After submission, jobs are routinely requested via HTTP GET request to the KVFinder-web service by a worker thread. When a job is finished, the worker thread automatically processes the incoming data to files.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
-<p>PyMOL KVFinder-web Tools is a PyMOL v2 plugin for detecting and characterizing biomolecular cavities at a KVFinder-web service, which is natively configured to our publicly available web service (<a class="reference external" href="http://parkvfinder.cnpem.br:8081">http://parkvfinder.cnpem.br:8081</a>).</p>
 <p><a class="reference external" href="https://pymol.org/2/">PyMOL v2</a> is required if you wish to use PyMOL KVFinder-web Tools.</p>
-<p>Afterwards, install the required Python packages from <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/master/requirements.txt">requirements.txt</a> file on PyMOL’s Python.</p>
+<p>To install the Python dependencies from <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/requirements.txt">requirements.txt</a>, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install -r requirements.txt
 </pre></div>
 </div>
-<p>or directly,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install pyqt5 toml typing
-</pre></div>
-</div>
-<p>Now, download the latest version of PyMOL KVFinder-web Tools from <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip">here</a>.</p>
+<p>To install PyMOL KVFinder-web Tools, download the latest version of PyMOL KVFinder-web Tools from <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip">here</a>. Now, follow these steps:</p>
 <ol class="arabic simple">
 <li><p>Open PyMOL;</p></li>
 <li><p>Go to <strong>Plugin</strong> menu and select <strong>Plugin Manager</strong> option;</p></li>
@@ -138,7 +137,7 @@
 <li><p>Restart PyMOL;</p></li>
 <li><p><strong>PyMOL KVFinder-web Tools</strong> is ready to use under <strong>Plugin</strong> menu.</p></li>
 </ol>
-<p>Or, if you clone this <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">repository</a>, instead of selecting <cite>PyMOL-KVFinder-web-Tools.zip</cite> (Step 5), user must select <cite>__init__.py</cite> of PyMOL-KVFinder-web-Tools directory.</p>
+<p>Or, if you clone this <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">repository</a>, instead of selecting <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip">PyMOL-KVFinder-web-Tools.zip</a> (Step 5), user must select <cite>__init__.py</cite> of PyMOL-KVFinder-web-Tools directory.</p>
 </section>
 <section id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h2>
@@ -283,13 +282,13 @@ delete sele
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../_web_portal/index.html" class="btn btn-neutral float-left" title="KVFinder-web portal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../_about/issues.html" class="btn btn-neutral float-right" title="Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../_http_client/index.html" class="btn btn-neutral float-right" title="HTTP client" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LBC-LNBio.</p>
+    <p>&#169; Copyright 2023, LBC-LNBio.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

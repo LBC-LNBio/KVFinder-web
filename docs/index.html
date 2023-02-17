@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to KVFinder-web’s documentation! &mdash; KVFinder-web 1.0.0 documentation</title>
@@ -12,11 +12,10 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,31 +27,33 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> KVFinder-web
-            <img src="_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="#" class="icon icon-home">
+            KVFinder-web
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
                 1.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">KVFinder-web service</span></p>
+              <p class="caption" role="heading"><span class="caption-text">RESTful web service</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_web_service/index.html">KVFinder-web service</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">KVFinder-web portal</span></p>
+<p class="caption" role="heading"><span class="caption-text">Clients</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_web_portal/index.html">KVFinder-web portal</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="_plugin/index.html">PyMOL KVFinder-web Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_http_client/index.html">HTTP client</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">GitHub repositories</span></p>
 <ul>
@@ -65,7 +66,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_about/issues.html">Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_about/scientific_team.html">Scientific team</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_about/citing.html">Citing KVFinder-web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_about/citing.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_about/funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_about/license.html">License</a></li>
 </ul>
 
         </div>
@@ -81,7 +84,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home"></a></li>
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Welcome to KVFinder-web’s documentation!</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
@@ -95,57 +98,62 @@
   <section id="welcome-to-kvfinder-web-s-documentation">
 <h1>Welcome to KVFinder-web’s documentation!<a class="headerlink" href="#welcome-to-kvfinder-web-s-documentation" title="Permalink to this heading"></a></h1>
 <p>Welcome to the <strong>KVFinder-web</strong> documentation, this page was built to help you get started with our web-based application for cavity detection and characterization.</p>
-<section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
-<p>KVFinder-web is an open-source web-based application of <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder">parKVFinder</a> software for cavity detection and spatial characterization of any type of biomolecular structure.</p>
-<p>The KVFinder-web application has two independent components:</p>
+<section id="kvfinder-web-overview">
+<h2>KVFinder-web overview<a class="headerlink" href="#kvfinder-web-overview" title="Permalink to this heading"></a></h2>
+<p>KVFinder-web <span id="id1">[<a class="reference internal" href="_about/citing.html#id5" title="João Victor Da Silva Guerra, Helder Veras Ribeiro filho, José Geraldo De Carvalho Pereira, and Paulo Sérgio Lopes-de-oliveira. KVFinder-web: a web-based application for detecting and characterizing cavities. 2023. URL:.">2</a>]</span> is an open-source web-based application of <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder">parKVFinder</a> software for cavity detection and spatial characterization of any type of biomolecular structure.</p>
+<p>We provide a publicly available KVFinder-web service at <a class="reference external" href="https://kvfinder-web.cnpem.br">https://kvfinder-web.cnpem.br</a>.</p>
+</section>
+<section id="kvfinder-web-components">
+<h2>KVFinder-web components<a class="headerlink" href="#kvfinder-web-components" title="Permalink to this heading"></a></h2>
+<p>The KVFinder-web application has two independent components: a RESTful web service and easy-to-use clients.</p>
+<section id="restful-web-service">
+<h3>RESTful web service<a class="headerlink" href="#restful-web-service" title="Permalink to this heading"></a></h3>
+<p>The KVFinder-web service, a RESTful web service, handles requests from the clients, manages accepted jobs and performs cavity detection and characterization on accepted jobs.</p>
 <ul class="simple">
-<li><p>a RESTful web service: [KVFinder-web service](<a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service">https://github.com/LBC-LNBio/KVFinder-web-service</a>);</p></li>
-<li><p>clients, that are:</p>
-<ul>
-<li><p>[HTTP Client](<a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service/blob/master/http-client.py">https://github.com/LBC-LNBio/KVFinder-web-service/blob/master/http-client.py</a>): a Python script;</p></li>
-<li><p>[KVFinder-web portal](<a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">https://github.com/LBC-LNBio/KVFinder-web-portal</a>): a graphical web portal;</p></li>
-<li><p>[PyMOL KVFinder-web Tools](<a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools</a>): a graphical PyMOL plugin;</p></li>
+<li><p><a class="reference internal" href="_web_service/index.html#kvfinder-web-service"><span class="std std-ref">KVFinder-web service</span></a></p></li>
 </ul>
-</li>
-</ul>
-<p>The RESTful web service (KVFinder-web service) handles requests from the clients, manages accepted jobs and performs cavity detection and characterization on accepted jobs.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><strong>KVFinder-web service</strong> repository: <a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service">https://github.com/LBC-LNBio/KVFinder-web-service</a></p>
+</div>
+</section>
+<section id="clients">
+<h3>Clients<a class="headerlink" href="#clients" title="Permalink to this heading"></a></h3>
 <p>The clients (i.e., HTTP Client, PyMOL KVFinder-web Tools, KVFinder-web portal) sends job via HTTP requests to the web service, customize parKVFinder detection parameters and process job results.</p>
-<p>We provide a publicly available KVFinder-web service ([<a class="reference external" href="https://kvfinder-web.cnpem.br](https://kvfinder-web.cnpem.br">https://kvfinder-web.cnpem.br](https://kvfinder-web.cnpem.br</a>)), with [KVFinder-web portal](<a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">https://github.com/LBC-LNBio/KVFinder-web-portal</a>) as the graphical web interface.</p>
-<p>Furthermore, users can install the standalone version of parKVFinder from this <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder">repository</a>. For more details, see the parKVFinder <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder/wiki">wiki</a>.</p>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">KVFinder-web service</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="_web_service/index.html">KVFinder-web service</a></li>
+<ul class="simple">
+<li><p><a class="reference internal" href="_web_portal/index.html#kvfinder-web-portal"><span class="std std-ref">KVFinder-web portal</span></a>: a graphical web portal;</p></li>
+<li><p><a class="reference internal" href="_plugin/index.html#pymol-kvfinder-web-tools"><span class="std std-ref">PyMOL KVFinder-web Tools</span></a>: a graphical PyMOL plugin.</p></li>
+<li><p><a class="reference internal" href="_http_client/index.html#http-client"><span class="std std-ref">HTTP client</span></a>: an example of a Python HTTP client;</p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><strong>KVFinder-web portal</strong> repository: <a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">https://github.com/LBC-LNBio/KVFinder-web-portal</a>
+<strong>PyMOL KVFinder-web Tools</strong> repository: <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools</a></p>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>parKVFinder<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<p>parKVFinder <span id="id3">[<a class="reference internal" href="_about/citing.html#id6" title="João Victor Da Silva Guerra, Helder Veras Ribeiro filho, Leandro Oliveira Bortot, Rodrigo Vargas Honorato, José Geraldo De Carvalho Pereira, and Paulo Sérgio Lopes-de-oliveira. ParKVFinder: a thread-level parallel approach in biomolecular cavity detection. SoftwareX, 12:100606, July 2020. URL: https://doi.org/10.1016/j.softx.2020.100606, doi:10.1016/j.softx.2020.100606.">1</a>]</span> uses grid-and-sphere-based methods to detect, characterize and visualize any type of biomolecular cavity. The cavity detection procedure applies a dual-probe algorithm based on the theory of mathematical morphology, originally implemented in KVFinder <span id="id4">[<a class="reference internal" href="_about/citing.html#id7" title="Saulo Hp Oliveira, Felipe An Ferraz, Rodrigo V Honorato, José Xavier-neto, Tiago Jp Sobreira, and Paulo Sl De Oliveira. KVFinder: steered identification of protein cavities as a PyMOL plugin. BMC Bioinformatics, June 2014. URL: https://doi.org/10.1186/1471-2105-15-197, doi:10.1186/1471-2105-15-197.">3</a>]</span>.</p>
+<p>parKVFinder has a standalone version available as an easy-to-use PyMOL plugin with an intuitive graphical user interface that allows users to explore customizable parameters for cavity detection and characterization. In it, spatial characterization (shape, volume, area, and surrounding residues) is performed in each detected cavity.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The standalone version of <strong>parKVFinder</strong> is available at this GitHub repository: <a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">https://github.com/LBC-LNBio/KVFinder-web-portal</a>. For more information, see the parKVFinder <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder/wiki">Wiki</a>.</p>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">KVFinder-web portal</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="_web_portal/index.html">KVFinder-web portal</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">PyMOL KVFinder-web Tools</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="_plugin/index.html">PyMOL KVFinder-web Tools</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">GitHub repositories</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service">KVFinder-web service</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">KVFinder-web portal</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">PyMOL KVFinder-web Tools</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder">parKVFinder</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_about/issues.html">Issues</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_about/scientific_team.html">Scientific team</a></li>
-<li class="toctree-l1"><a class="reference internal" href="_about/citing.html">Citing KVFinder-web</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_about/citing.html">Citing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_about/funding.html">Funding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_about/license.html">License</a></li>
 </ul>
 </div>
 </section>
@@ -161,7 +169,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LBC-LNBio.</p>
+    <p>&#169; Copyright 2023, LBC-LNBio.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
