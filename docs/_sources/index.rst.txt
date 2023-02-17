@@ -11,7 +11,7 @@ Welcome to the **KVFinder-web** documentation, this page was built to help you g
 KVFinder-web overview
 #####################
 
-KVFinder-web :cite:`kvfinder-web` is an open-source web-based application of `parKVFinder`_ software for cavity detection and spatial characterization of any type of biomolecular structure. 
+KVFinder-web :cite:p:`kvfinder-web` is an open-source web-based application of `parKVFinder`_ software for cavity detection and spatial characterization of any type of biomolecular structure. 
 
 We provide a publicly available KVFinder-web service at https://kvfinder-web.cnpem.br.
 
