@@ -57,7 +57,9 @@ The clients (i.e., HTTP Client, PyMOL KVFinder-web Tools, KVFinder-web portal) s
 
 
 .. seealso::
+   
    **KVFinder-web portal** repository: https://github.com/LBC-LNBio/KVFinder-web-portal
+
    **PyMOL KVFinder-web Tools** repository: https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools
 
 
