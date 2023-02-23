@@ -78,7 +78,7 @@ The KVFinder-web service uses port 8081 by default. If the local installation wa
 
 The queue information can be accessed at: http://localhost:8023/info.
 
-To use the PyMOL KVFinder-web Tools, users must change the server url and port hardcoded on the `__init__.py <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py>`_ file and reinstall the client plugin on PyMOL.
+To use the PyMOL KVFinder-web Tools, users must change the server url and path hardcoded on the `__init__.py <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py>`_ file and reinstall the client plugin on PyMOL.
 
 From:
 
@@ -87,7 +87,7 @@ From:
     # Server                                 #
     server = "http://kvfinder-web.cnpem.br"  #
     # Path                                   #
-    port = "/api"                            #
+    path = "/api"                            #
 
 to:
 
@@ -130,7 +130,7 @@ API reference
     
     - Method: POST
     - Media type: application/json
-    - URL: http://localhost:8081/create
+    - URL: http://localhost:8081/create or http://kvfinder-web.cnpem.br/api/create
 
 Example of job request:
 
@@ -182,7 +182,7 @@ Example of job request:
 - Request a job: GET /:id
 
     - Method: GET
-    - URL: http://localhost:8081/:id, where *:id* is the job id received from the web server as submission response.
+    - URL: http://localhost:8081/:id or http://kvfinder-web.cnpem.br/api/:id, where *:id* is the job id received from the web server as submission response.
 
 Example of response obtained for a *job* with status "completed":
 
@@ -205,10 +205,7 @@ Example of response obtained for a *job* with status "completed":
 - Retrieve a job input: GET /retrieve-input/:id*
 
   - Method: GET
-  - URL: [http://localhost:8081/retrieve-input/:id](http://localhost:8081/retrieve-input/:id)
-  
-
-Where *:id*  is the job id received from the server as submission response.
+  - URL: http://localhost:8081/retrieve-input/:id or http://kvfinder-web.cnpem.br/api/retrieve-input/:id, where *:id*  is the job id received from the server as submission response.
 
 Example of response obtained for a requested *job* input:
 

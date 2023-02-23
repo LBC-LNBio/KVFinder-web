@@ -161,12 +161,12 @@
 </div>
 <p>The KVFinder-web service uses port 8081 by default. If the local installation was successfully, the locally configured KVFinder-web service is available at: <a class="reference external" href="http://localhost:8081">http://localhost:8081</a>. If you access the url on a browser, it should display a text message like: “KVFinder Web Service”.</p>
 <p>The queue information can be accessed at: <a class="reference external" href="http://localhost:8023/info">http://localhost:8023/info</a>.</p>
-<p>To use the PyMOL KVFinder-web Tools, users must change the server url and port hardcoded on the <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py">__init__.py</a> file and reinstall the client plugin on PyMOL.</p>
+<p>To use the PyMOL KVFinder-web Tools, users must change the server url and path hardcoded on the <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py">__init__.py</a> file and reinstall the client plugin on PyMOL.</p>
 <p>From:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Server                                 #</span>
 <span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://kvfinder-web.cnpem.br&quot;</span>  <span class="c1">#</span>
 <span class="c1"># Path                                   #</span>
-<span class="nv">port</span> <span class="o">=</span> <span class="s2">&quot;/api&quot;</span>                            <span class="c1">#</span>
+<span class="nv">path</span> <span class="o">=</span> <span class="s2">&quot;/api&quot;</span>                            <span class="c1">#</span>
 </pre></div>
 </div>
 <p>to:</p>
@@ -204,7 +204,7 @@
 <div><ul class="simple">
 <li><p>Method: POST</p></li>
 <li><p>Media type: application/json</p></li>
-<li><p>URL: <a class="reference external" href="http://localhost:8081/create">http://localhost:8081/create</a></p></li>
+<li><p>URL: <a class="reference external" href="http://localhost:8081/create">http://localhost:8081/create</a> or <a class="reference external" href="http://kvfinder-web.cnpem.br/api/create">http://kvfinder-web.cnpem.br/api/create</a></p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -259,7 +259,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><p>Method: GET</p></li>
-<li><p>URL: <a class="reference external" href="http://localhost:8081/:id">http://localhost:8081/:id</a>, where <em>:id</em> is the job id received from the web server as submission response.</p></li>
+<li><p>URL: <a class="reference external" href="http://localhost:8081/:id">http://localhost:8081/:id</a> or <a class="reference external" href="http://kvfinder-web.cnpem.br/api/:id">http://kvfinder-web.cnpem.br/api/:id</a>, where <em>:id</em> is the job id received from the web server as submission response.</p></li>
 </ul>
 </div></blockquote>
 </li>
@@ -284,11 +284,10 @@
 <li><p>Retrieve a job input: GET /retrieve-input/:id*</p>
 <ul>
 <li><p>Method: GET</p></li>
-<li><p>URL: [<a class="reference external" href="http://localhost:8081/retrieve-input/:id](http://localhost:8081/retrieve-input/:id">http://localhost:8081/retrieve-input/:id](http://localhost:8081/retrieve-input/:id</a>)</p></li>
+<li><p>URL: <a class="reference external" href="http://localhost:8081/retrieve-input/:id">http://localhost:8081/retrieve-input/:id</a> or <a class="reference external" href="http://kvfinder-web.cnpem.br/api/retrieve-input/:id">http://kvfinder-web.cnpem.br/api/retrieve-input/:id</a>, where <em>:id</em>  is the job id received from the server as submission response.</p></li>
 </ul>
 </li>
 </ul>
-<p>Where <em>:id</em>  is the job id received from the server as submission response.</p>
 <p>Example of response obtained for a requested <em>job</em> input:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17275205978013541183&quot;</span><span class="p">,</span><span class="w"></span>
