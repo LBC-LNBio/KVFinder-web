@@ -10,7 +10,7 @@ Besides our interactive graphical clients, we provide an example of a simple Pyt
 This client provides an example of a template in Python that can be run to access our web service and parse the output data. It is composed of two objects: 
 
 - ``KVJob``: create a job using a pdb file with hard-coded parameters;
-- ``KVHTTPClient``: create the HTTP client with server url and port and methods to run, submit and get results of a job.
+- ``KVClient``: create the HTTP client with server url and port and methods to run, submit and get results of a job.
 
 Installation
 ------------
@@ -28,13 +28,13 @@ First of all, to execute our example of a Python HTTP client, you must import ``
 
 .. code-block:: python
 
-    >>> from http_client import KVJob, KVHTTPClient
+    >>> from http_client import KVJob, KVClient
 
 Then, you must create and configure a KVHTTPClient with server url and port.
 
 .. code-block:: python
 
-    >>> client = KVHTTPClient("http://kvfinder-web.cnpem.br", "8081")
+    >>> client = KVClient("http://kvfinder-web.cnpem.br", path="/api")
 
 With the client created, you must create a job and run it, so run:
 

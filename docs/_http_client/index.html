@@ -106,7 +106,7 @@
 <p>This client provides an example of a template in Python that can be run to access our web service and parse the output data. It is composed of two objects:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">KVJob</span></code>: create a job using a pdb file with hard-coded parameters;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">KVHTTPClient</span></code>: create the HTTP client with server url and port and methods to run, submit and get results of a job.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KVClient</span></code>: create the HTTP client with server url and port and methods to run, submit and get results of a job.</p></li>
 </ul>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
@@ -118,11 +118,11 @@
 <section id="tutorial">
 <h2>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this heading"></a></h2>
 <p>First of all, to execute our example of a Python HTTP client, you must import <code class="docutils literal notranslate"><span class="pre">http_client</span></code> objects:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">http_client</span> <span class="kn">import</span> <span class="n">KVJob</span><span class="p">,</span> <span class="n">KVHTTPClient</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">http_client</span> <span class="kn">import</span> <span class="n">KVJob</span><span class="p">,</span> <span class="n">KVClient</span>
 </pre></div>
 </div>
 <p>Then, you must create and configure a KVHTTPClient with server url and port.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">KVHTTPClient</span><span class="p">(</span><span class="s2">&quot;http://kvfinder-web.cnpem.br&quot;</span><span class="p">,</span> <span class="s2">&quot;8081&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">KVClient</span><span class="p">(</span><span class="s2">&quot;http://kvfinder-web.cnpem.br&quot;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;/api&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>With the client created, you must create a job and run it, so run:</p>

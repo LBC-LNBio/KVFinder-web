@@ -131,7 +131,7 @@
 </section>
 <section id="publicly-available-kvfinder-web-service">
 <h2>Publicly available KVFinder-web service<a class="headerlink" href="#publicly-available-kvfinder-web-service" title="Permalink to this heading"></a></h2>
-<p>We provide a publicly available KVFinder-web service (<a class="reference external" href="http://parkvfinder.cnpem.br:8081">http://parkvfinder.cnpem.br:8081</a>), running in a Cloud environment. Hence, users may opt to run jobs on our public KVFinder-web service or on a locally configured server.</p>
+<p>We provide a publicly available KVFinder-web service (<a class="reference external" href="http://kvfinder-web.cnpem.br">http://kvfinder-web.cnpem.br</a>), running in a Cloud environment. Hence, users may opt to run jobs on our public KVFinder-web service or on a locally configured server.</p>
 </section>
 <section id="local-installation">
 <h2>Local installation<a class="headerlink" href="#local-installation" title="Permalink to this heading"></a></h2>
@@ -164,16 +164,16 @@
 <p>To use the PyMOL KVFinder-web Tools, users must change the server url and port hardcoded on the <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py">__init__.py</a> file and reinstall the client plugin on PyMOL.</p>
 <p>From:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Server                                 #</span>
-<span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://parkvfinder.cnpem.br&quot;</span>   <span class="c1">#</span>
-<span class="c1"># Port                                   #</span>
-<span class="nv">port</span> <span class="o">=</span> <span class="s2">&quot;8081&quot;</span>                            <span class="c1">#</span>
+<span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://kvfinder-web.cnpem.br&quot;</span>  <span class="c1">#</span>
+<span class="c1"># Path                                   #</span>
+<span class="nv">port</span> <span class="o">=</span> <span class="s2">&quot;/api&quot;</span>                            <span class="c1">#</span>
 </pre></div>
 </div>
 <p>to:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Server                                 #</span>
-<span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://localhost&quot;</span>              <span class="c1">#</span>
-<span class="c1"># Port                                   #</span>
-<span class="nv">port</span> <span class="o">=</span> <span class="s2">&quot;8081&quot;</span>                            <span class="c1">#</span>
+<span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8081&quot;</span>         <span class="c1">#</span>
+<span class="c1"># Path                                   #</span>
+<span class="nv">path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>                                <span class="c1">#</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -204,7 +204,7 @@
 <div><ul class="simple">
 <li><p>Method: POST</p></li>
 <li><p>Media type: application/json</p></li>
-<li><p>URL: <a class="reference external" href="http://localthost:8081/create">http://localthost:8081/create</a></p></li>
+<li><p>URL: <a class="reference external" href="http://localhost:8081/create">http://localhost:8081/create</a></p></li>
 </ul>
 </div></blockquote>
 </li>

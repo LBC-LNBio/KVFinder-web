@@ -35,7 +35,7 @@ Further, the KVFinder-web service has some limitations, compared to a local inst
 Publicly available KVFinder-web service
 =======================================
 
-We provide a publicly available KVFinder-web service (http://parkvfinder.cnpem.br:8081), running in a Cloud environment. Hence, users may opt to run jobs on our public KVFinder-web service or on a locally configured server.
+We provide a publicly available KVFinder-web service (http://kvfinder-web.cnpem.br), running in a Cloud environment. Hence, users may opt to run jobs on our public KVFinder-web service or on a locally configured server.
 
 Local installation
 ==================
@@ -85,18 +85,18 @@ From:
 .. code-block:: bash
 
     # Server                                 #
-    server = "http://parkvfinder.cnpem.br"   #
-    # Port                                   #
-    port = "8081"                            #
+    server = "http://kvfinder-web.cnpem.br"  #
+    # Path                                   #
+    port = "/api"                            #
 
 to:
 
 .. code-block:: bash
 
     # Server                                 #
-    server = "http://localhost"              #
-    # Port                                   #
-    port = "8081"                            #
+    server = "http://localhost:8081"         #
+    # Path                                   #
+    path = ""                                #
 
 .. note:: 
 
@@ -130,7 +130,7 @@ API reference
     
     - Method: POST
     - Media type: application/json
-    - URL: http://localthost:8081/create
+    - URL: http://localhost:8081/create
 
 Example of job request:
 
