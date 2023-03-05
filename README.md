@@ -9,9 +9,9 @@ We provide a publicly available KVFinder-web at [https://kvfinder-web.cnpem.br](
 
 ## Components
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/LBC-LNBio/KVFinder-web-service?label=KVFinder-web-service)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/LBC-LNBio/KVFinder-web-service?label=KVFinder-web%20service)
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/LBC-LNBio/KVFinder-web-portal?label=KVFinder-web-portal)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/LBC-LNBio/KVFinder-web-portal?label=KVFinder-web%20portal)
 
 The KVFinder-web has two independent components:
 
@@ -20,7 +20,7 @@ The KVFinder-web has two independent components:
 
 ## Client-side applications
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/LBC-LNBio/PyMOL-KVFinder-web-Tools?label=PyMOL-KVFinder-web-Tools)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/LBC-LNBio/PyMOL-KVFinder-web-Tools?label=PyMOL%20KVFinder-web%20Tools)
 
 To broaden the range of possibilities for user interaction, we also provide additional client-side applications, that are:
 
