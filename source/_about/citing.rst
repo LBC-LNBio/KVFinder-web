@@ -1,11 +1,11 @@
 Citing
 ======
 
-For our cavity detection and characterization software, cite: :cite:`parkvfinder`.
+If you use KVFinder-web, please cite :cite:p:`parkvfinder` and :cite:p:`kvfinder-web`.
 
-For our KVFinder-web project, which includes KVFinder-web service, KVFinder-web portal and PyMOL KVFinder-web Tools, cite: :cite:`kvfinder-web`.
+If you use depth and hydropathy characterization, please also cite :cite:p:`pykvfinder`.
 
-For our cavity detection algorithm, cite: :cite:`kvfinder`.
+If you refer to our cavity detection algorithm, please also cite: :cite:`kvfinder`.
 
 .. rubric:: References
 

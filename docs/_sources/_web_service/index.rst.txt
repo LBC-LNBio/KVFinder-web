@@ -184,12 +184,41 @@ Example of job request:
     - Method: GET
     - URL: http://localhost:8081/:id or http://kvfinder-web.cnpem.br/api/:id, where *:id* is the job id received from the web server as submission response.
 
+Example of response obtained for a *job* with status "queued":
+
+.. code-block:: json
+
+    {
+        "id": "4990580026958948484",
+        "status": "queued",
+        "output": null,
+        "created_at": "2023-03-03T18:55:28.439300871Z",
+        "started_at": null,
+        "ended_at": null,
+        "expires_after": "1day"
+    }
+
+Example of response obtained for a *job* with status "running":
+
+.. code-block:: json
+
+    {
+        "id": "4990580026958948484",  
+        "status": "running",  
+        "output": null,  
+        "created_at": "2023-03-03T18:55:28.439300871Z",  
+        "started_at": "2023-03-03T18:55:31.416200437Z",    
+        "ended_at": null,  
+        "expires_after": "1day"
+    }
+
+
 Example of response obtained for a *job* with status "completed":
 
 .. code-block:: json
 
     {
-        "id": "17275205978013541183",
+        "id": "4990580026958948484",
         "status": "completed",
         "output": {
             "pdb_kv": "ATOM      1  HS  KAA   259     -15.000 -10.200   0.000  1.00  0.00\nATOM      2(...)",
@@ -212,7 +241,7 @@ Example of response obtained for a requested *job* input:
 .. code-block:: json
 
     {
-        "id": "17275205978013541183",
+        "id": "4990580026958948484",
         "input": {
             "pdb": "ATOM   25  OD1 ASP E 323       0.497  12.598  16.506  1.00 40.80           O  \nATOM      26(...)",
             "pdb_ligand": null,

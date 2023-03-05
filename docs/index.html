@@ -48,10 +48,10 @@
               <p class="caption" role="heading"><span class="caption-text">RESTful web service</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="_web_service/index.html">KVFinder-web service</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Clients</span></p>
-<ul>
 <li class="toctree-l1"><a class="reference internal" href="_web_portal/index.html">KVFinder-web portal</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Client-side applications</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="_plugin/index.html">PyMOL KVFinder-web Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="_http_client/index.html">HTTP client</a></li>
 </ul>
@@ -100,30 +100,27 @@
 <p>Welcome to the <strong>KVFinder-web</strong> documentation, this page was built to help you get started with our web-based application for cavity detection and characterization.</p>
 <section id="kvfinder-web-overview">
 <h2>KVFinder-web overview<a class="headerlink" href="#kvfinder-web-overview" title="Permalink to this heading"></a></h2>
-<p>KVFinder-web <span id="id1">[<a class="reference internal" href="_about/citing.html#id5" title="João Victor Da Silva Guerra, Helder Veras Ribeiro filho, José Geraldo De Carvalho Pereira, and Paulo Sérgio Lopes-de-oliveira. KVFinder-web: a web-based application for detecting and characterizing cavities. Manuscript in preparation, 2023. URL:.">2</a>]</span> is an open-source web-based application of <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder">parKVFinder</a> software for cavity detection and spatial characterization of any type of biomolecular structure.</p>
-<p>We provide a publicly available KVFinder-web service at <a class="reference external" href="https://kvfinder-web.cnpem.br">https://kvfinder-web.cnpem.br</a>.</p>
+<p>KVFinder-web <span id="id1">[<a class="reference internal" href="_about/citing.html#id6" title="João Victor Da Silva Guerra, Helder Veras Ribeiro filho, José Geraldo De Carvalho Pereira, and Paulo Sérgio Lopes-de-oliveira. KVFinder-web: a web-based application for detecting and characterizing cavities. Manuscript in preparation, 2023. URL:.">4</a>]</span> is an open-source web-based application of an updated version of <a class="reference internal" href="#parkvfinder">parKVFinder</a> software <span id="id2">[<a class="reference internal" href="_about/citing.html#id7" title="João Victor Da Silva Guerra, Helder Veras Ribeiro filho, Leandro Oliveira Bortot, Rodrigo Vargas Honorato, José Geraldo De Carvalho Pereira, and Paulo Sérgio Lopes-de-oliveira. ParKVFinder: a thread-level parallel approach in biomolecular cavity detection. SoftwareX, 12:100606, July 2020. URL: https://doi.org/10.1016/j.softx.2020.100606, doi:10.1016/j.softx.2020.100606.">3</a>]</span> (v1.2.0) for cavity detection and characterization of any type of biomolecular structure. The characterization includes spatial, depth, constitutional and hydropathy characterization.</p>
+<p>We provide a publicly available KVFinder-web at <a class="reference external" href="https://kvfinder-web.cnpem.br">https://kvfinder-web.cnpem.br</a>.</p>
 </section>
 <section id="kvfinder-web-components">
 <h2>KVFinder-web components<a class="headerlink" href="#kvfinder-web-components" title="Permalink to this heading"></a></h2>
-<p>The KVFinder-web application has two independent components: a RESTful web service and easy-to-use clients.</p>
-<section id="restful-web-service">
-<h3>RESTful web service<a class="headerlink" href="#restful-web-service" title="Permalink to this heading"></a></h3>
-<p>The KVFinder-web service, a RESTful web service, handles requests from the clients, manages accepted jobs and performs cavity detection and characterization on accepted jobs.</p>
+<p>The KVFinder-web has two independent components:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="_web_service/index.html#kvfinder-web-service"><span class="std std-ref">KVFinder-web service</span></a></p></li>
+<li><p>RESTful web service: <a class="reference internal" href="_web_service/index.html#kvfinder-web-service"><span class="std std-ref">KVFinder-web service</span></a>;</p></li>
+<li><p>Graphical web portal: <a class="reference internal" href="_web_portal/index.html#kvfinder-web-portal"><span class="std std-ref">KVFinder-web portal</span></a>.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><strong>KVFinder-web service</strong> repository: <a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-service">https://github.com/LBC-LNBio/KVFinder-web-service</a></p>
+<p><strong>KVFinder-web portal</strong> repository: <a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">https://github.com/LBC-LNBio/KVFinder-web-portal</a></p>
 </div>
-</section>
-<section id="clients">
-<h3>Clients<a class="headerlink" href="#clients" title="Permalink to this heading"></a></h3>
-<p>The clients (i.e., HTTP Client, PyMOL KVFinder-web Tools, KVFinder-web portal) sends job via HTTP requests to the web service, customize parKVFinder detection parameters and process job results.</p>
+<section id="client-side-applications">
+<h3>Client-side applications<a class="headerlink" href="#client-side-applications" title="Permalink to this heading"></a></h3>
+<p>The alternative client-side applications (i.e., Python HTTP Client and PyMOL KVFinder-web Tools) sends job via HTTP requests to the web service, customize parKVFinder detection parameters and process job results.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="_web_portal/index.html#kvfinder-web-portal"><span class="std std-ref">KVFinder-web portal</span></a>: a graphical web portal;</p></li>
 <li><p><a class="reference internal" href="_plugin/index.html#pymol-kvfinder-web-tools"><span class="std std-ref">PyMOL KVFinder-web Tools</span></a>: a graphical PyMOL plugin.</p></li>
 <li><p><a class="reference internal" href="_http_client/index.html#http-client"><span class="std std-ref">HTTP client</span></a>: an example of a Python HTTP client;</p></li>
 </ul>
@@ -131,18 +128,19 @@
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><strong>KVFinder-web portal</strong> repository: <a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">https://github.com/LBC-LNBio/KVFinder-web-portal</a></p>
 <p><strong>PyMOL KVFinder-web Tools</strong> repository: <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools">https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools</a></p>
 </div>
 </section>
 </section>
-<section id="id2">
-<h2>parKVFinder<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
-<p>parKVFinder <span id="id3">[<a class="reference internal" href="_about/citing.html#id6" title="João Victor Da Silva Guerra, Helder Veras Ribeiro filho, Leandro Oliveira Bortot, Rodrigo Vargas Honorato, José Geraldo De Carvalho Pereira, and Paulo Sérgio Lopes-de-oliveira. ParKVFinder: a thread-level parallel approach in biomolecular cavity detection. SoftwareX, 12:100606, July 2020. URL: https://doi.org/10.1016/j.softx.2020.100606, doi:10.1016/j.softx.2020.100606.">1</a>]</span> uses grid-and-sphere-based methods to detect, characterize and visualize any type of biomolecular cavity. The cavity detection procedure applies a dual-probe algorithm based on the theory of mathematical morphology, originally implemented in KVFinder <span id="id4">[<a class="reference internal" href="_about/citing.html#id7" title="Saulo Hp Oliveira, Felipe An Ferraz, Rodrigo V Honorato, José Xavier-neto, Tiago Jp Sobreira, and Paulo Sl De Oliveira. KVFinder: steered identification of protein cavities as a PyMOL plugin. BMC Bioinformatics, June 2014. URL: https://doi.org/10.1186/1471-2105-15-197, doi:10.1186/1471-2105-15-197.">3</a>]</span>.</p>
-<p>parKVFinder has a standalone version available as an easy-to-use PyMOL plugin with an intuitive graphical user interface that allows users to explore customizable parameters for cavity detection and characterization. In it, spatial characterization (shape, volume, area, and surrounding residues) is performed in each detected cavity.</p>
+<section id="parkvfinder">
+<span id="id3"></span><h2>parKVFinder<a class="headerlink" href="#parkvfinder" title="Permalink to this heading"></a></h2>
+<p>parKVFinder <span id="id4">[<a class="reference internal" href="_about/citing.html#id7" title="João Victor Da Silva Guerra, Helder Veras Ribeiro filho, Leandro Oliveira Bortot, Rodrigo Vargas Honorato, José Geraldo De Carvalho Pereira, and Paulo Sérgio Lopes-de-oliveira. ParKVFinder: a thread-level parallel approach in biomolecular cavity detection. SoftwareX, 12:100606, July 2020. URL: https://doi.org/10.1016/j.softx.2020.100606, doi:10.1016/j.softx.2020.100606.">3</a>]</span> uses grid-and-sphere-based methods to detect, characterize and visualize any type of biomolecular cavity. The cavity detection procedure applies a dual-probe algorithm based on the theory of mathematical morphology, originally implemented in KVFinder <span id="id5">[<a class="reference internal" href="_about/citing.html#id8" title="Saulo Hp Oliveira, Felipe An Ferraz, Rodrigo V Honorato, José Xavier-neto, Tiago Jp Sobreira, and Paulo Sl De Oliveira. KVFinder: steered identification of protein cavities as a PyMOL plugin. BMC Bioinformatics, June 2014. URL: https://doi.org/10.1186/1471-2105-15-197, doi:10.1186/1471-2105-15-197.">5</a>]</span>.</p>
+<p>Recently, parKVFinder (v1.2.0) has been integrated with additional features, such as depth calculation and Eisenberg &amp; Weiss <span id="id6">[<a class="reference internal" href="_about/citing.html#id10" title="D Eisenberg, R M Weiss, and T C Terwilliger. The hydrophobic moment detects periodicity in protein hydrophobicity. Proceedings of the National Academy of Sciences, 81(1):140–144, January 1984. URL: https://doi.org/10.1073/pnas.81.1.140, doi:10.1073/pnas.81.1.140.">2</a>]</span> hydropathy characterization, which are implemented in pyKVFinder <span id="id7">[<a class="reference internal" href="_about/citing.html#id9" title="João Victor da Silva Guerra, Helder Veras Ribeiro-Filho, Gabriel Ernesto Jara, Leandro Oliveira Bortot, José Geraldo de Carvalho Pereira, and Paulo Sérgio Lopes-de-Oliveira. pyKVFinder: an efficient and integrable python package for biomolecular cavity detection and characterization in data science. BMC Bioinformatics, December 2021. URL: https://doi.org/10.1186/s12859-021-04519-4, doi:10.1186/s12859-021-04519-4.">1</a>]</span>.</p>
+<p>Now, cavity characterization includes spatial, depth, constitutional and hydropathy properties. The depth characterization defines depths for each cavity point, shown in the B-factor, and calculates the average and maximum depth per cavity. The constitutional characterization includes amino acids that form the identified cavities. The hydropathy characterization maps Eisenberg &amp; Weiss hydrophobicity scale at surface points, shown in the Q-factor, and estimates average hydropathy per cavity.</p>
+<p>Furthermore, parKVFinder has a standalone version available as an easy-to-use PyMOL plugin with an intuitive graphical user interface that allows users to explore customizable parameters for cavity detection and characterization.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>The standalone version of <strong>parKVFinder</strong> is available at this GitHub repository: <a class="reference external" href="https://github.com/LBC-LNBio/KVFinder-web-portal">https://github.com/LBC-LNBio/KVFinder-web-portal</a>. For more information, see the parKVFinder <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder/wiki">Wiki</a>.</p>
+<p>The standalone version of <strong>parKVFinder</strong> is available at this GitHub repository: <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder">https://github.com/LBC-LNBio/parKVFinder</a>. For more information, see the parKVFinder <a class="reference external" href="https://github.com/LBC-LNBio/parKVFinder/wiki">Wiki</a>.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>

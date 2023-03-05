@@ -66,7 +66,7 @@ to:
 Tutorial
 --------
 
-On this tutorial, we are going to demonstrate how to use PyMOL KVFinder-web Tools with our publicly available KVFinder-web service.
+On this tutorial, we are going to demonstrate how to use PyMOL KVFinder-web Tools with our publicly available KVFinder-web at https://kvfinder-web.cnpem.br.
 
 All files used on this tutorial can be found under examples directory, on the PyMOL KVFinder-web Tools `repository <https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools>`_.
 
@@ -88,12 +88,12 @@ protein detection. To submit a job with the default parameters to KVFinder-web s
 .. image:: img/main_tab_2.png
     :width: 800
 
-After successfully submitting the job to KVFinder-web service, a window will appear with the Job ID. For instace, the Job ID of our submission is 18100368098668549413.
+After successfully submitting the job to KVFinder-web service, a window will appear with the Job ID. For instace, the Job ID of our submission is 4990580026958948489.
 
 .. image:: img/job_submission_1.png
     :width: 300
 
-The job informations are stored on ~/.KVFinder-web directory in TOML-formatted files and can be visualized on **Results** tab under **Jobs** tab. The status of our submission (18100368098668549413) is displayed on the **Status** field.
+The job informations are stored on ~/.KVFinder-web directory in TOML-formatted files and can be visualized on **Results** tab under **Jobs** tab. The status of our submission (4990580026958948489) is displayed on the **Status** field.
 
 .. image:: img/jobs_tab_1.png
     :width: 800
@@ -110,7 +110,25 @@ We can select cavities in the **Volume** or **Surface Area** lists to highlight 
 
 .. note::
     
-    The interface residues surrounding the cavity KAF are colored in green (sticks), the surface points are colored in red (nb_spheres) and the remaining cavity points are colored in blue (non_bounded).
+    The interface residues surrounding the cavity KAH are colored in green (sticks), the surface points are colored in red (nb_spheres) and the remaining cavity points are colored in blue (non_bounded).
+
+We can visualize depth of the cavity points by clicking on **Depth** option on **Show descriptors**. We can select cavities in the **Average Depth** or **Maximum Depth** lists to highlight them on a new object called **depths**, identifying each cavity. 
+
+.. image:: img/results_tab_3.png
+    :width: 800
+
+.. note::
+    
+    The cavity points are colored using a gradient from blue to red to represent the depth of each point. The blue points correspond to the shallowest points on the cavity-bulk boundary, while the red points correspond to the deepest points. The depth scale ranges from 0.0 to the maximum depth of all cavities
+
+We can visualize hydropathy of the surface points by clicking on **Hydropathy** options on **Show descriptors**. We can select cavities in the **Average Hydropathy** list to highlight them on a new object called **hydropathy**, identifying each cavity. 
+
+.. note::
+
+    The surface points are colored based on the closest amino acid to it. The Eisenberg & Weiss hydrophobicity scale :cite:p:`eisenbergweiss` ranges from -1.42 (highly hydrophobic) to 2.6 (highly hydrophilic).
+
+.. image:: img/results_tab_4.png
+    :width: 800
 
 Changing cavity boundary
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -121,21 +139,21 @@ parKVFinder works with a double probe system to detect cavities. A smaller probe
 
 Let's show the effect of varying **Probe Out** and **Removal Distance** on the cavity boundary.
 
-First, we should copy the cavity KAF to a new object to compare cavity boundary from the previous execution.
+First, we should copy the cavity KAH to a new object to compare cavity boundary from the previous execution.
 
 .. code-block:: bash
 
-    # Copy KAF
-    select resn KAF and output.KVFinder.output
-    create KAF, sele
+    # Copy KAH
+    select resn KAH and output.KVFinder.output
+    create KAH, sele
     delete sele
-    # Color KAF
-    color magenta, KAF
+    # Color KAH
+    color magenta, KAH
 
 Adjusting Probe Out
 *******************
 
-As mentioned above, adjusting the Probe Out size changes the level of the cavity boundary. So let’s go back on the **Main** tab and change the **Probe Out** size to 8.0 Å. Submit the job to KVFinder-web service again.
+As mentioned above, adjusting the Probe Out size changes the level of the cavity boundary. So let's go back on the **Main** tab and change the **Probe Out** size to 8.0 Å. Submit the job to KVFinder-web service again.
 
 After completion, load the job results by clicking on **Show** button on **Results** tab under **Jobs** tab.
 
@@ -166,20 +184,20 @@ After completion, load the job results by clicking on **Show** button on **Resul
 .. image:: img/pymol_viewer_3.png
     :width: 800
 
-Again, copy the cavity KAH (same region of the previous detections) to a new object (KAF_RD).
+Again, copy the cavity KAG (same region of the previous detections) to a new object (KAG_RD).
 
 .. code-block:: bash
 
-    # Copy KAH
-    select resn KAH and output.KVFinder.output
-    create KAH_RD, sele
+    # Copy KAG
+    select resn KAG and output.KVFinder.output
+    create KAG_RD, sele
     delete sele
 
 .. image:: img/pymol_viewer_4.png
     :width: 800
 
   
-The cavity KAF detected with the 2.4 Å Removal Distance (magenta) has a lower boundary than that detected with the 1.2 Å (KAH; white). Therefore, by decreasing the Removal Distance, the cavity boundary is also raised.
+The cavity KAH detected with the 2.4 Å Removal Distance (magenta) has a lower boundary than that detected with the 1.2 Å (KAG; white). Therefore, by decreasing the Removal Distance, the cavity boundary is also raised.
 
 Furthermore, changing the cavity boundary by varying Probe Out and Removal Distance also affects cavity segregation.
 
