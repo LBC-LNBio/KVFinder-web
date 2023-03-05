@@ -37,7 +37,7 @@ The KVFinder-web has two independent components:
 Client-side applications
 ************************
 
-The alternative client-side applications (i.e., Python HTTP Client and PyMOL KVFinder-web Tools) sends job via HTTP requests to the web service, customize parKVFinder detection parameters and process job results.
+In addition to the primary interaction mode of KVFinder-web, we also provide additional client-side applications, such as PyMOL KVFinder-web and an example of a Python HTTP client, which broaden the range of possibilities for user interaction. These clients sends job via HTTP requests to the web service, customize detection parameters and process job results.
 
 
 * :ref:`pymol-kvfinder-web-tools`: a graphical PyMOL plugin.
