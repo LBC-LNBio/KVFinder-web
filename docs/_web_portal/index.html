@@ -107,15 +107,15 @@
 <section id="local-installation">
 <h2>Local installation<a class="headerlink" href="#local-installation" title="Permalink to this heading"></a></h2>
 <p>To run locally the KVFinder-web portal in Linux distributions, it is necessary to install docker-compose and its dependencies. To install it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker-compose
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install docker-compose
 </pre></div>
 </div>
 <p>After the docker-compose installation and clone of this repository. First, you have to build our KVFinder-web interface:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>kvfinder-web-portal<span class="w"> </span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -t kvfinder-web-portal .
 </pre></div>
 </div>
 <p>To start KVFinder-web interface:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3838</span>:3838<span class="w"> </span>kvfinder-web-portal
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -p <span class="m">3838</span>:3838 kvfinder-web-portal
 </pre></div>
 </div>
 </section>

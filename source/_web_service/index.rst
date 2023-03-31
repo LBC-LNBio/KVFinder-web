@@ -132,6 +132,7 @@ API reference
     - Media type: application/json
     - URL: http://localhost:8081/create or http://kvfinder-web.cnpem.br/api/create
 
+
 Example of job request:
 
 .. code-block:: json
@@ -178,6 +179,18 @@ Example of job request:
             }
         }
     }
+
+The response to 'create' contains the job *id* and the number of jobs already waiting in the queue to be processed.
+
+.. code-block:: json
+
+    {
+        "id": "4990580026958948484",
+        "queue_size": 0,
+    }
+
+
+If you try to "recreate" a job in the queue, the response of `GET /:id` is processed and no information about the position in the queue is sent.
 
 - Request a job: GET /:id
 

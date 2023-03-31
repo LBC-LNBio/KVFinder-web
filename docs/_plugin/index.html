@@ -121,7 +121,7 @@
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
 <p><a class="reference external" href="https://pymol.org/2/">PyMOL v2</a> is required if you wish to use PyMOL KVFinder-web Tools.</p>
 <p>To install the Python dependencies from <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/requirements.txt">requirements.txt</a>, run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install -r requirements.txt
 </pre></div>
 </div>
 <p>To install PyMOL KVFinder-web Tools, download the latest version of PyMOL KVFinder-web Tools from <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/releases/latest/download/PyMOL-KVFinder-web-Tools.zip">here</a>. Now, follow these steps:</p>
@@ -141,16 +141,16 @@
 <p>To use the PyMOL KVFinder-web Tools in a locally configured KVFinder-web service, users must change the server url and path hardcoded on the <a class="reference external" href="https://github.com/LBC-LNBio/PyMOL-KVFinder-web-Tools/blob/main/PyMOL-KVFinder-web-tools/__init__.py">__init__.py</a> file and reinstall the client plugin on PyMOL.</p>
 <p>From:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Server                                 #</span>
-<span class="nv">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://kvfinder-web.cnpem.br&quot;</span><span class="w">  </span><span class="c1">#</span>
+<span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://kvfinder-web.cnpem.br&quot;</span>  <span class="c1">#</span>
 <span class="c1"># Path                                   #</span>
-<span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/api&quot;</span><span class="w">                            </span><span class="c1">#</span>
+<span class="nv">path</span> <span class="o">=</span> <span class="s2">&quot;/api&quot;</span>                            <span class="c1">#</span>
 </pre></div>
 </div>
 <p>to:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Server                                 #</span>
-<span class="nv">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;http://localhost:8081&quot;</span><span class="w">         </span><span class="c1">#</span>
+<span class="nv">server</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8081&quot;</span>         <span class="c1">#</span>
 <span class="c1"># Path                                   #</span>
-<span class="nv">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w">                                </span><span class="c1">#</span>
+<span class="nv">path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>                                <span class="c1">#</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -202,11 +202,11 @@ protein detection. To submit a job with the default parameters to KVFinder-web s
 <p>Let’s show the effect of varying <strong>Probe Out</strong> and <strong>Removal Distance</strong> on the cavity boundary.</p>
 <p>First, we should copy the cavity KAH to a new object to compare cavity boundary from the previous execution.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy KAH</span>
-<span class="k">select</span><span class="w"> </span>resn<span class="w"> </span>KAH<span class="w"> </span>and<span class="w"> </span>output.KVFinder.output
-create<span class="w"> </span>KAH,<span class="w"> </span>sele
-delete<span class="w"> </span>sele
+<span class="k">select</span> resn KAH and output.KVFinder.output
+create KAH, sele
+delete sele
 <span class="c1"># Color KAH</span>
-color<span class="w"> </span>magenta,<span class="w"> </span>KAH
+color magenta, KAH
 </pre></div>
 </div>
 <section id="adjusting-probe-out">
@@ -216,9 +216,9 @@ color<span class="w"> </span>magenta,<span class="w"> </span>KAH
 <a class="reference internal image-reference" href="../_images/pymol_viewer_1.png"><img alt="../_images/pymol_viewer_1.png" src="../_images/pymol_viewer_1.png" style="width: 800px;" /></a>
 <p>Again, copy the cavity KAF to a new object (KAF_PO).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy KAF</span>
-<span class="k">select</span><span class="w"> </span>resn<span class="w"> </span>KAF<span class="w"> </span>and<span class="w"> </span>output.KVFinder.output
-create<span class="w"> </span>KAF_PO,<span class="w"> </span>sele
-delete<span class="w"> </span>sele
+<span class="k">select</span> resn KAF and output.KVFinder.output
+create KAF_PO, sele
+delete sele
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/pymol_viewer_2.png"><img alt="../_images/pymol_viewer_2.png" src="../_images/pymol_viewer_2.png" style="width: 800px;" /></a>
@@ -231,9 +231,9 @@ delete<span class="w"> </span>sele
 <a class="reference internal image-reference" href="../_images/pymol_viewer_3.png"><img alt="../_images/pymol_viewer_3.png" src="../_images/pymol_viewer_3.png" style="width: 800px;" /></a>
 <p>Again, copy the cavity KAG (same region of the previous detections) to a new object (KAG_RD).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy KAG</span>
-<span class="k">select</span><span class="w"> </span>resn<span class="w"> </span>KAG<span class="w"> </span>and<span class="w"> </span>output.KVFinder.output
-create<span class="w"> </span>KAG_RD,<span class="w"> </span>sele
-delete<span class="w"> </span>sele
+<span class="k">select</span> resn KAG and output.KVFinder.output
+create KAG_RD, sele
+delete sele
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/pymol_viewer_4.png"><img alt="../_images/pymol_viewer_4.png" src="../_images/pymol_viewer_4.png" style="width: 800px;" /></a>
@@ -274,9 +274,9 @@ delete<span class="w"> </span>sele
 <p>Still on the <strong>Search Space</strong> tab, click on the check button <strong>Ligand Adjustment</strong>, which will enable the <strong>Refresh</strong> button, the <strong>Ligand PDB</strong> combo box and the <strong>Ligand Cutoff</strong> entry.</p>
 <p>Afterwards, copy the adenosine (ADN) from ligs_1FMO to a new object.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy adenosine</span>
-<span class="k">select</span><span class="w"> </span>resn<span class="w"> </span>ADN
-create<span class="w"> </span>adenosine,<span class="w"> </span>sele
-delete<span class="w"> </span>sele
+<span class="k">select</span> resn ADN
+create adenosine, sele
+delete sele
 </pre></div>
 </div>
 <p>Click the <strong>Refresh</strong> button to display all objects in the scene in the Ligand PDB combo box. Select the <strong>ADN</strong> on the combo box and reduce Ligand Cutoff to 3.0 Å. Submit the job to KVFinder-web service.</p>

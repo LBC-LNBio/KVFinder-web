@@ -20,13 +20,13 @@ After the docker-compose installation and clone of this repository. First, you h
 
 .. code-block:: bash
 
-    sudo docker build -t kvfinder-web-portal .
+    docker build -t kvfinder-web-portal .
 
 To start KVFinder-web interface:
 
 .. code-block:: bash
 
-    sudo docker run -p 3838:3838 kvfinder-web-portal
+    docker run -p 3838:3838 kvfinder-web-portal
 
 Tutorial
 --------
