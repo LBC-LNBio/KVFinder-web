@@ -1,0 +1,52 @@
+name: KVFinder-web service job submission statistics
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  
+  data:
+    name: Get job submission data
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get data from the server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: | 
+            echo ${{ secrets.PASSWORD }} | sudo -S su - -c "ls /var/lib/containers/storage/volumes/kvfinder-web-service_kvfinder-jobs/_data -lhrt --time-style=long-iso > /home/${{ secrets.USERNAME }}/usage.txt && ls /var/lib/containers/storage/volumes/kvfinder_web_service_kvfinder-jobs/_data -lhrt --time-style=long-iso >> /home/${{ secrets.USERNAME }}/usage.txt"
+    
+  scp-copy:
+    name: Copy job submission data
+    runs-on: ubuntu-latest
+    needs: [data]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+    
+      - name: Copy job submission data
+        uses: nicklasfrahm/scp-action@main
+        with:
+          direction: download
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          insecure_password: ${{ secrets.PASSWORD }}
+          insecure_ignore_fingerprint: true
+          source: /home/${{ secrets.USERNAME }}/usage.txt
+          target: ./usage.txt
+
+      - name: Upload job submission data
+        uses: actions/upload-artifact@v4
+        with:
+          name: data
+          path: usage.txt
+        
+      - name: Display repository
+        run: |
+          ls -lahrt .github/workflows
+
