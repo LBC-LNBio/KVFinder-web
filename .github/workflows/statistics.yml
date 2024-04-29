@@ -44,6 +44,7 @@ jobs:
       
       - name: Run python script to produce usage plots
         run: |
+          pip install -r .github/workflows/requirements.txt
           python3 .github/workflows/statistics.py
           mkdir usage
           mv usage.txt *.png usage/
