@@ -1,5 +1,7 @@
 name: KVFinder-web service job submission statistics
 on:
+  schedule:
+    - cron: '0 0 1 * *'
   push:
     branches: [master]
   workflow_dispatch:
@@ -39,14 +41,17 @@ jobs:
           insecure_ignore_fingerprint: true
           source: /home/${{ secrets.USERNAME }}/usage.txt
           target: ./usage.txt
+      
+      - name: Run python script to produce usage plots
+        run: |
+          python3 .github/workflows/statistics.py
+          mkdir usage
+          mv usage.txt *.png usage/
 
       - name: Upload job submission data
         uses: actions/upload-artifact@v4
         with:
-          name: data
-          path: usage.txt
+          name: usage
+          path: usage
         
-      - name: Display repository
-        run: |
-          ls -lahrt .github/workflows
 
