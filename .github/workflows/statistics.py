@@ -131,14 +131,14 @@ def plot_last_month(data: Usage) -> None:
     ax.set_ylim(ymin, ymax + 1)
     ax.yaxis.set_ticks(numpy.arange(ymin, ymax + 10, 10))
     ax.tick_params(axis="y", labelsize=15)
-    ax.set_xlabel(f"{data.today.date().isoformat()}", size=20)
+    ax.set_xlabel(f"{MONTHS[data.today.month-1]}-{data.today.year}", size=20)
     ax.tick_params(axis="x", labelsize=15)
     ax.xaxis.set_ticks(numpy.arange(0, number_of_days, 1))
 
     # Legend
     ax.legend(loc="upper left", fontsize=20)
 
-    plt.savefig(f"{MONTHS[data.today.month-1]}-{data.today.year}-daily.png", dpi=300)
+    plt.savefig(f"{MONTHS[data.today.month-1]}-{(data.today.year) % 100}-daily.png", dpi=300)
 
 
 def plot_last_12_months(data: Usage) -> None:
@@ -261,7 +261,7 @@ def plot_per_year(data: Usage) -> None:
     # Legend
     ax.legend(loc="upper left", fontsize=20)
 
-    plt.savefig(f"{MONTHS[data.today.month-1]}-{data.today.year}-yearly.png", dpi=300)
+    plt.savefig(f"{MONTHS[data.today.month-1]}-{data.today.year % 100}-yearly.png", dpi=300)
 
 
 if __name__ == "__main__":
