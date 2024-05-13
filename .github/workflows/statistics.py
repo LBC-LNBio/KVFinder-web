@@ -114,7 +114,7 @@ def plot_last_month(data: Usage) -> None:
         height = rect.get_height()
         ax.text(
             rect.get_x() + rect.get_width() / 2.0,
-            1.05 * height,
+            height + 1,
             "%d" % int(height),
             ha="center",
             va="bottom",
@@ -122,7 +122,7 @@ def plot_last_month(data: Usage) -> None:
         )
 
     # Average jobs per day
-    ax.axhline(y=avg, color="red", linestyle="--", label="Jobs per day")
+    ax.axhline(y=avg, color="red", linestyle="--", label="Average jobs per day")
 
     # Customize
     ymin, ymax = 0, round(count.max().values[0] / 100) * 100
@@ -133,12 +133,14 @@ def plot_last_month(data: Usage) -> None:
     ax.tick_params(axis="y", labelsize=15)
     ax.set_xlabel(f"{MONTHS[data.today.month-1]}-{data.today.year}", size=20)
     ax.tick_params(axis="x", labelsize=15)
-    ax.xaxis.set_ticks(numpy.arange(0, number_of_days, 1))
+    ax.xaxis.set_ticks(numpy.arange(1, number_of_days + 1, 1))
 
     # Legend
     ax.legend(loc="upper left", fontsize=20)
 
-    plt.savefig(f"{MONTHS[data.today.month-1]}-{(data.today.year) % 100}-daily.png", dpi=300)
+    plt.savefig(
+        f"{MONTHS[data.today.month-1]}-{(data.today.year) % 100}-daily.png", dpi=300
+    )
 
 
 def plot_last_12_months(data: Usage) -> None:
@@ -150,16 +152,15 @@ def plot_last_12_months(data: Usage) -> None:
     last_12_months.columns = ["Jobs"]
 
     # Count usage per day from last month
-    count = last_12_months.groupby(last_12_months["Jobs"].dt.month).count()
+    count = last_12_months.groupby(
+        [last_12_months["Jobs"].dt.year, last_12_months["Jobs"].dt.month]
+    ).count()
 
     # Jobs per month
     avg = count.sum().values[0] / 12
 
     # Months
-    x = [
-        f"{MONTHS[((index + data.today.month - 2) % 12) + 1]}-{(data.today.year if (index + data.today.month) / 12 > 1 else data.today.year - 1) % 100}"
-        for index in count.index
-    ]
+    x = [f"{MONTHS[index[1]]}-{index[0] % 100}" for index in count.index]
 
     # Plot bar plot
     fig, ax = plt.subplots(1, 1, figsize=(12, 9), clear=True, tight_layout=True)
@@ -182,7 +183,7 @@ def plot_last_12_months(data: Usage) -> None:
         height = rect.get_height()
         ax.text(
             rect.get_x() + rect.get_width() / 2.0,
-            height + 2,
+            height + 1,
             "%d" % int(height),
             ha="center",
             va="bottom",
@@ -190,14 +191,14 @@ def plot_last_12_months(data: Usage) -> None:
         )
 
     # Average jobs per day
-    ax.axhline(y=avg, color="red", linestyle="--", label="Jobs per month")
+    ax.axhline(y=avg, color="red", linestyle="--", label="Average jobs per month")
 
     # Customize
     ymin, ymax = 0, (round(count.max().values[0] / 100) * 100) + 50
     ax.grid(which="major", axis="y", linestyle="--")
     ax.set_ylabel("Jobs", size=20)
     ax.set_ylim(ymin, ymax + 1)
-    ax.yaxis.set_ticks(numpy.arange(ymin, ymax + 25, 25))
+    ax.yaxis.set_ticks(numpy.arange(ymin, ymax + 50, 50))
     ax.tick_params(axis="y", labelsize=15)
     ax.tick_params(axis="x", labelsize=15)
     ax.xaxis.set_ticks(x)
@@ -209,9 +210,15 @@ def plot_last_12_months(data: Usage) -> None:
 
 
 def plot_per_year(data: Usage) -> None:
+    # Get data until last month
+    years = data.filter(
+        datetime.datetime(2023, 1, 1),
+        datetime.datetime(data.today.year, data.today.month, 1),
+    )
+    years.columns = ["Jobs"]
+
     # Count usage per year
-    count = data.dates.groupby(data.dates["Data"].dt.year).count()
-    count.columns = ["Jobs"]
+    count = years.groupby(years["Jobs"].dt.year).count()
 
     # Jobs per year
     avg = count.sum().values[0] / count.index.shape[0]
@@ -245,10 +252,10 @@ def plot_per_year(data: Usage) -> None:
         )
 
     # Average jobs per day
-    ax.axhline(y=avg, color="red", linestyle="--", label="Jobs per year")
+    ax.axhline(y=avg, color="red", linestyle="--", label="Average jobs per year")
 
     # Customize
-    ymin, ymax = 0, (round(count.max().values[0] / 1000) * 1000) + 100
+    ymin, ymax = 0, (round(count.max().values[0] / 100) * 100) + 100
     ax.grid(which="major", axis="y", linestyle="--")
     ax.set_ylabel("Jobs", size=20)
     ax.set_ylim(ymin, ymax + 1)
@@ -261,7 +268,9 @@ def plot_per_year(data: Usage) -> None:
     # Legend
     ax.legend(loc="upper left", fontsize=20)
 
-    plt.savefig(f"{MONTHS[data.today.month-1]}-{data.today.year % 100}-yearly.png", dpi=300)
+    plt.savefig(
+        f"{MONTHS[data.today.month-1]}-{data.today.year % 100}-yearly.png", dpi=300
+    )
 
 
 if __name__ == "__main__":
