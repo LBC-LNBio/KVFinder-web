@@ -1,5 +1,6 @@
 import calendar
 import datetime
+import math
 
 import matplotlib.pyplot as plt
 import numpy
@@ -125,7 +126,7 @@ def plot_last_month(data: Usage) -> None:
     ax.axhline(y=avg, color="red", linestyle="--", label="Average jobs per day")
 
     # Customize
-    ymin, ymax = 0, round(count.max().values[0] / 100) * 100
+    ymin, ymax = 0, math.ceil(count.max().values[0] / 100) * 100
     ax.grid(which="major", axis="y", linestyle="--")
     ax.set_ylabel("Jobs", size=20)
     ax.set_ylim(ymin, ymax + 1)
@@ -194,7 +195,7 @@ def plot_last_12_months(data: Usage) -> None:
     ax.axhline(y=avg, color="red", linestyle="--", label="Average jobs per month")
 
     # Customize
-    ymin, ymax = 0, (round(count.max().values[0] / 100) * 100) + 50
+    ymin, ymax = 0, math.ceil(count.max().values[0] / 250) * 250
     ax.grid(which="major", axis="y", linestyle="--")
     ax.set_ylabel("Jobs", size=20)
     ax.set_ylim(ymin, ymax + 1)
@@ -255,7 +256,7 @@ def plot_per_year(data: Usage) -> None:
     ax.axhline(y=avg, color="red", linestyle="--", label="Average jobs per year")
 
     # Customize
-    ymin, ymax = 0, (round(count.max().values[0] / 100) * 100) + 100
+    ymin, ymax = 0, (math.ceil(count.max().values[0] / 1000) * 1000)
     ax.grid(which="major", axis="y", linestyle="--")
     ax.set_ylabel("Jobs", size=20)
     ax.set_ylim(ymin, ymax + 1)
