@@ -81,17 +81,27 @@ class Usage(object):
 
 def plot_last_month(data: Usage) -> None:
     # Get last month
-    last_month = data.filter(
-        datetime.datetime(data.today.year, data.today.month - 1, 1),
-        datetime.datetime(data.today.year, data.today.month, 1),
-    )
+    print(datetime.datetime(data.today.year, data.today.month, 1))
+    if data.today.month == 1:
+        last_month = data.filter(
+            datetime.datetime(data.today.year - 1, 12, 1),
+            datetime.datetime(data.today.year, 1, 1),
+        )
+    else:
+        last_month = data.filter(
+            datetime.datetime(data.today.year, data.today.month - 1, 1),
+            datetime.datetime(data.today.year, data.today.month, 1),
+        )
     last_month.columns = ["Jobs"]
 
     # Count usage per day from last month
     count = last_month.groupby(last_month["Jobs"].dt.day).count()
 
     # Average jobs per day
-    _, number_of_days = calendar.monthrange(data.today.year, data.today.month - 1)
+    if data.today.month == 1:
+        _, number_of_days = calendar.monthrange(data.today.year - 1, 12)
+    else:
+        _, number_of_days = calendar.monthrange(data.today.year, data.today.month - 1)
     avg = count.sum().values / number_of_days
 
     # Plot bar plot
@@ -132,16 +142,20 @@ def plot_last_month(data: Usage) -> None:
     ax.set_ylim(ymin, ymax + 1)
     ax.yaxis.set_ticks(numpy.arange(ymin, ymax + 10, 10))
     ax.tick_params(axis="y", labelsize=15)
-    ax.set_xlabel(f"{MONTHS[data.today.month-1]}-{data.today.year}", size=20)
+    if data.today.month == 1:
+        ax.set_xlabel(f"{MONTHS[12]}-{data.today.year - 1}", size=20)
+    else:
+        ax.set_xlabel(f"{MONTHS[data.today.month - 1]}-{data.today.year}", size=20)
     ax.tick_params(axis="x", labelsize=15)
     ax.xaxis.set_ticks(numpy.arange(1, number_of_days + 1, 1))
 
     # Legend
     ax.legend(loc="upper left", fontsize=20)
 
-    plt.savefig(
-        f"{MONTHS[data.today.month-1]}-{(data.today.year) % 100}-daily.png", dpi=300
-    )
+    if data.today.month == 1:
+        plt.savefig(f"{MONTHS[12]}-{(data.today.year - 1) % 100}-daily.png", dpi=300)
+    else:
+        plt.savefig(f"{MONTHS[data.today.month-1]}-{(data.today.year) % 100}-daily.png", dpi=300)
 
 
 def plot_last_12_months(data: Usage) -> None:
@@ -269,9 +283,10 @@ def plot_per_year(data: Usage) -> None:
     # Legend
     ax.legend(loc="upper left", fontsize=20)
 
-    plt.savefig(
-        f"{MONTHS[data.today.month-1]}-{data.today.year % 100}-yearly.png", dpi=300
-    )
+    if data.today.month == 1:
+        plt.savefig(f"{MONTHS[12]}-{(data.today.year - 1) % 100}-yearly.png", dpi=300)
+    else:
+        plt.savefig(f"{MONTHS[data.today.month-1]}-{data.today.year % 100}-yearly.png", dpi=300)
 
 
 if __name__ == "__main__":

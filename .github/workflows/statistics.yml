@@ -24,8 +24,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          script: | 
-            echo ${{ secrets.PASSWORD }} | sudo -S su - -c "ls /var/lib/containers/storage/volumes/kvfinder-web-service_kvfinder-jobs/_data -lhrt --time-style=long-iso > /home/${{ secrets.USERNAME }}/usage.txt && ls /var/lib/containers/storage/volumes/kvfinder_web_service_kvfinder-jobs/_data -lhrt --time-style=long-iso >> /home/${{ secrets.USERNAME }}/usage.txt"
+          script: |
+            echo ${{ secrets.PASSWORD }} | sudo -S su - -c "cat /home/${{ secrets.USERNAME }}/01_2023_to_12_2024.txt > /home/${{ secrets.USERNAME }}/usage.txt && ls /var/lib/containers/storage/volumes/kvfinder_web_service_kvfinder-jobs/_data -lhrt --time-style=long-iso >> /home/${{ secrets.USERNAME }}/usage.txt"
 
       - name: Copy job submission data
         uses: nicklasfrahm/scp-action@main
@@ -69,5 +69,5 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          script: | 
+          script: |
             echo ${{ secrets.PASSWORD }} | sudo -S su - -c "rm /home/${{ secrets.USERNAME }}/usage.txt"
